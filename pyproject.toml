@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "log-detective"
+version = "1.0.0"
+description = "Terminal-Native Log Detective: Stream-ingest gigabyte logs, cluster errors, pinpoint Patient Zero, and reconstruct crash sequences."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "Log Detective Hackathon Team" }
+]
+dependencies = [
+    "typer>=0.9.0",
+    "rich>=13.0.0",
+    "orjson>=3.9.0",
+    "pydantic>=2.0.0"
+]
+
+[project.scripts]
+log-detective = "log_detective.cli:main"
+logdet = "log_detective.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["log_detective*"]
