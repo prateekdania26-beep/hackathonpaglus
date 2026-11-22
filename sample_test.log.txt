@@ -1,0 +1,500 @@
+{"timestamp":"2026-11-21T10:00:00.011Z","level":"INFO","service":"order-service","trace_id":"trace-0b6eeef7554c","msg":"Handled /api/v1/auth/login in 33ms status=200 client_ip=10.1.7.190"}
+{"timestamp":"2026-11-21T10:00:00.013Z","level":"INFO","service":"payment-service","trace_id":"trace-5e2a40e24459","msg":"Handled /api/v1/checkout in 8ms status=200 client_ip=10.5.23.152"}
+2026-11-21T10:00:00.017Z [inventory-db] INFO - Handled /api/v1/auth/login in 96ms status 200 from 10.5.155.7
+2026-11-21T10:00:00.026Z [inventory-db] INFO - Handled /api/v1/cart/items in 108ms status 200 from 10.4.57.115
+{"timestamp":"2026-11-21T10:00:00.039Z","level":"INFO","service":"order-service","trace_id":"trace-d4d2f79bbbc5","msg":"Handled /api/v1/cart/items in 24ms status=200 client_ip=10.2.179.109"}
+2026-11-21T10:00:00.052Z [payment-service] INFO - Handled /api/v1/checkout in 50ms status 200 from 10.3.27.24
+{"timestamp":"2026-11-21T10:00:00.062Z","level":"INFO","service":"redis-cache","trace_id":"trace-3e7d2f5471e0","msg":"Handled /api/v1/orders/create in 73ms status=200 client_ip=10.3.207.12"}
+2026-11-21T10:00:00.077Z [order-service] INFO - Handled /api/v1/health in 118ms status 200 from 10.4.21.142
+{"timestamp":"2026-11-21T10:00:00.087Z","level":"INFO","service":"api-gateway","trace_id":"trace-0004d59562b9","msg":"Handled /api/v1/auth/login in 103ms status=200 client_ip=10.2.181.18"}
+2026-11-21T10:00:00.089Z [payment-service] INFO - Handled /api/v1/cart/items in 63ms status 200 from 10.2.222.26
+2026-11-21T10:00:00.095Z [auth-service] INFO - Handled /api/v1/cart/items in 94ms status 200 from 10.2.95.91
+{"timestamp":"2026-11-21T10:00:00.106Z","level":"INFO","service":"auth-service","trace_id":"trace-eec329ce354d","msg":"Handled /api/v1/health in 98ms status=200 client_ip=10.1.156.163"}
+2026-11-21T10:00:00.114Z [redis-cache] INFO - Handled /api/v1/health in 33ms status 200 from 10.4.70.254
+{"timestamp":"2026-11-21T10:00:00.128Z","level":"INFO","service":"api-gateway","trace_id":"trace-501964164a75","msg":"Handled /api/v1/cart/items in 56ms status=200 client_ip=10.1.59.211"}
+{"timestamp":"2026-11-21T10:00:00.132Z","level":"INFO","service":"order-service","trace_id":"trace-7a7f7eed7c09","msg":"Handled /api/v1/auth/login in 88ms status=200 client_ip=10.5.225.184"}
+2026-11-21T10:00:00.147Z [auth-service] INFO - Handled /api/v1/auth/login in 100ms status 200 from 10.4.37.68
+{"timestamp":"2026-11-21T10:00:00.152Z","level":"INFO","service":"inventory-db","trace_id":"trace-fa3fe88da452","msg":"Handled /api/v1/orders/create in 51ms status=200 client_ip=10.5.110.230"}
+2026-11-21T10:00:00.155Z [api-gateway] INFO - Handled /api/v1/checkout in 24ms status 200 from 10.5.127.24
+2026-11-21T10:00:00.168Z [payment-service] INFO - Handled /api/v1/orders/create in 81ms status 200 from 10.4.153.17
+2026-11-21T10:00:00.177Z [api-gateway] INFO - Handled /api/v1/checkout in 92ms status 200 from 10.3.249.142
+{"timestamp":"2026-11-21T10:00:00.190Z","level":"INFO","service":"order-service","trace_id":"trace-815035188587","msg":"Handled /api/v1/checkout in 42ms status=200 client_ip=10.3.197.165"}
+2026-11-21T10:00:00.198Z [redis-cache] INFO - Handled /api/v1/cart/items in 69ms status 200 from 10.1.245.185
+{"timestamp":"2026-11-21T10:00:00.207Z","level":"INFO","service":"order-service","trace_id":"trace-835a80ce707a","msg":"Handled /api/v1/health in 82ms status=200 client_ip=10.1.223.161"}
+{"timestamp":"2026-11-21T10:00:00.213Z","level":"INFO","service":"inventory-db","trace_id":"trace-b19c2b87cf4a","msg":"Handled /api/v1/checkout in 81ms status=200 client_ip=10.2.139.245"}
+{"timestamp":"2026-11-21T10:00:00.214Z","level":"INFO","service":"order-service","trace_id":"trace-153fceefab03","msg":"Handled /api/v1/auth/login in 12ms status=200 client_ip=10.1.238.93"}
+2026-11-21T10:00:00.224Z [payment-service] INFO - Handled /api/v1/checkout in 102ms status 200 from 10.1.22.188
+2026-11-21T10:00:00.227Z [inventory-db] INFO - Handled /api/v1/auth/login in 38ms status 200 from 10.2.169.122
+{"timestamp":"2026-11-21T10:00:00.237Z","level":"INFO","service":"inventory-db","trace_id":"trace-bb646add29d2","msg":"Handled /api/v1/auth/login in 96ms status=200 client_ip=10.4.247.55"}
+{"timestamp":"2026-11-21T10:00:00.248Z","level":"INFO","service":"inventory-db","trace_id":"trace-7cf56aac1a57","msg":"Handled /api/v1/orders/create in 20ms status=200 client_ip=10.3.113.231"}
+{"timestamp":"2026-11-21T10:00:00.250Z","level":"INFO","service":"inventory-db","trace_id":"trace-485bc1817167","msg":"Handled /api/v1/auth/login in 80ms status=200 client_ip=10.3.6.151"}
+2026-11-21T10:00:00.252Z [api-gateway] INFO - Handled /api/v1/cart/items in 14ms status 200 from 10.1.59.18
+{"timestamp":"2026-11-21T10:00:00.257Z","level":"INFO","service":"auth-service","trace_id":"trace-049d0f0d4627","msg":"Handled /api/v1/health in 78ms status=200 client_ip=10.4.55.139"}
+2026-11-21T10:00:00.270Z [auth-service] INFO - Handled /api/v1/checkout in 17ms status 200 from 10.4.207.105
+2026-11-21T10:00:00.276Z [redis-cache] INFO - Handled /api/v1/checkout in 91ms status 200 from 10.4.106.120
+2026-11-21T10:00:00.287Z [redis-cache] INFO - Handled /api/v1/cart/items in 107ms status 200 from 10.1.16.104
+{"timestamp":"2026-11-21T10:00:00.291Z","level":"INFO","service":"payment-service","trace_id":"trace-2e4a44a74369","msg":"Handled /api/v1/auth/login in 59ms status=200 client_ip=10.2.49.138"}
+2026-11-21T10:00:00.299Z [api-gateway] INFO - Handled /api/v1/orders/create in 108ms status 200 from 10.2.224.237
+2026-11-21T10:00:00.308Z [inventory-db] INFO - Handled /api/v1/checkout in 16ms status 200 from 10.1.13.167
+2026-11-21T10:00:00.322Z [payment-service] INFO - Handled /api/v1/orders/create in 32ms status 200 from 10.2.43.105
+2026-11-21T10:00:00.337Z [api-gateway] INFO - Handled /api/v1/orders/create in 38ms status 200 from 10.1.43.98
+2026-11-21T10:00:00.350Z [redis-cache] INFO - Handled /api/v1/health in 89ms status 200 from 10.4.74.109
+2026-11-21T10:00:00.353Z [api-gateway] INFO - Handled /api/v1/health in 99ms status 200 from 10.2.76.56
+2026-11-21T10:00:00.365Z [inventory-db] INFO - Handled /api/v1/orders/create in 69ms status 200 from 10.3.15.13
+{"timestamp":"2026-11-21T10:00:00.374Z","level":"INFO","service":"inventory-db","trace_id":"trace-4758904567e2","msg":"Handled /api/v1/checkout in 113ms status=200 client_ip=10.2.15.246"}
+2026-11-21T10:00:00.384Z [auth-service] INFO - Handled /api/v1/orders/create in 20ms status 200 from 10.1.173.221
+{"timestamp":"2026-11-21T10:00:00.394Z","level":"INFO","service":"api-gateway","trace_id":"trace-3b3fee3ae7a1","msg":"Handled /api/v1/health in 15ms status=200 client_ip=10.2.149.153"}
+2026-11-21T10:00:00.404Z [order-service] INFO - Handled /api/v1/auth/login in 90ms status 200 from 10.5.134.81
+{"timestamp":"2026-11-21T10:00:00.408Z","level":"INFO","service":"redis-cache","trace_id":"trace-709e3b1fae61","msg":"Handled /api/v1/cart/items in 63ms status=200 client_ip=10.3.102.34"}
+{"timestamp":"2026-11-21T10:00:00.421Z","level":"INFO","service":"inventory-db","trace_id":"trace-dd04b0cbe0b0","msg":"Handled /api/v1/health in 17ms status=200 client_ip=10.1.3.118"}
+{"timestamp":"2026-11-21T10:00:00.425Z","level":"INFO","service":"order-service","trace_id":"trace-0435ad31fcbc","msg":"Handled /api/v1/checkout in 117ms status=200 client_ip=10.5.68.34"}
+2026-11-21T10:00:00.430Z [inventory-db] INFO - Handled /api/v1/cart/items in 83ms status 200 from 10.2.113.214
+{"timestamp":"2026-11-21T10:00:00.443Z","level":"INFO","service":"inventory-db","trace_id":"trace-f718c8abb359","msg":"Handled /api/v1/cart/items in 89ms status=200 client_ip=10.5.3.171"}
+{"timestamp":"2026-11-21T10:00:00.458Z","level":"INFO","service":"api-gateway","trace_id":"trace-8fdee3f17f8b","msg":"Handled /api/v1/health in 24ms status=200 client_ip=10.2.68.30"}
+{"timestamp":"2026-11-21T10:00:00.468Z","level":"INFO","service":"auth-service","trace_id":"trace-418fe25bdde0","msg":"Handled /api/v1/cart/items in 69ms status=200 client_ip=10.2.184.88"}
+{"timestamp":"2026-11-21T10:00:00.483Z","level":"INFO","service":"payment-service","trace_id":"trace-165ce80714d0","msg":"Handled /api/v1/cart/items in 10ms status=200 client_ip=10.1.24.163"}
+{"timestamp":"2026-11-21T10:00:00.496Z","level":"INFO","service":"order-service","trace_id":"trace-79290f3c0d8e","msg":"Handled /api/v1/auth/login in 99ms status=200 client_ip=10.2.164.251"}
+2026-11-21T10:00:00.508Z [api-gateway] INFO - Handled /api/v1/checkout in 118ms status 200 from 10.4.144.3
+{"timestamp":"2026-11-21T10:00:00.511Z","level":"INFO","service":"order-service","trace_id":"trace-b02520cbf956","msg":"Handled /api/v1/health in 75ms status=200 client_ip=10.5.10.214"}
+2026-11-21T10:00:00.514Z [api-gateway] INFO - Handled /api/v1/cart/items in 31ms status 200 from 10.1.79.94
+2026-11-21T10:00:00.525Z [inventory-db] INFO - Handled /api/v1/orders/create in 84ms status 200 from 10.1.91.200
+{"timestamp":"2026-11-21T10:00:00.540Z","level":"INFO","service":"auth-service","trace_id":"trace-de79b7cf6aae","msg":"Handled /api/v1/orders/create in 8ms status=200 client_ip=10.2.222.42"}
+{"timestamp":"2026-11-21T10:00:00.555Z","level":"INFO","service":"payment-service","trace_id":"trace-47f8dd84a629","msg":"Handled /api/v1/auth/login in 39ms status=200 client_ip=10.3.201.239"}
+{"timestamp":"2026-11-21T10:00:00.567Z","level":"INFO","service":"api-gateway","trace_id":"trace-defd8469f79f","msg":"Handled /api/v1/orders/create in 33ms status=200 client_ip=10.1.98.224"}
+2026-11-21T10:00:00.582Z [auth-service] INFO - Handled /api/v1/auth/login in 8ms status 200 from 10.4.90.79
+2026-11-21T10:00:00.589Z [api-gateway] INFO - Handled /api/v1/cart/items in 49ms status 200 from 10.3.72.222
+2026-11-21T10:00:00.596Z [api-gateway] INFO - Handled /api/v1/checkout in 117ms status 200 from 10.5.85.241
+2026-11-21T10:00:00.599Z [order-service] INFO - Handled /api/v1/checkout in 18ms status 200 from 10.5.247.252
+2026-11-21T10:00:00.605Z [inventory-db] INFO - Handled /api/v1/checkout in 54ms status 200 from 10.3.112.156
+2026-11-21T10:00:00.609Z [payment-service] INFO - Handled /api/v1/checkout in 71ms status 200 from 10.3.12.182
+{"timestamp":"2026-11-21T10:00:00.618Z","level":"INFO","service":"api-gateway","trace_id":"trace-acb2942458d5","msg":"Handled /api/v1/cart/items in 84ms status=200 client_ip=10.2.94.111"}
+2026-11-21T10:00:00.632Z [order-service] INFO - Handled /api/v1/health in 44ms status 200 from 10.1.185.231
+{"timestamp":"2026-11-21T10:00:00.638Z","level":"INFO","service":"inventory-db","trace_id":"trace-ec433f52cd5c","msg":"Handled /api/v1/auth/login in 29ms status=200 client_ip=10.4.179.76"}
+2026-11-21T10:00:00.645Z [order-service] INFO - Handled /api/v1/orders/create in 75ms status 200 from 10.2.158.146
+{"timestamp":"2026-11-21T10:00:00.650Z","level":"INFO","service":"inventory-db","trace_id":"trace-5eaab2bf360e","msg":"Handled /api/v1/health in 88ms status=200 client_ip=10.3.54.111"}
+2026-11-21T10:00:00.658Z [inventory-db] INFO - Handled /api/v1/orders/create in 106ms status 200 from 10.4.173.55
+2026-11-21T10:00:00.671Z [order-service] INFO - Handled /api/v1/health in 89ms status 200 from 10.2.169.22
+2026-11-21T10:00:00.677Z [auth-service] INFO - Handled /api/v1/cart/items in 33ms status 200 from 10.1.210.244
+2026-11-21T10:00:00.680Z [payment-service] INFO - Handled /api/v1/health in 113ms status 200 from 10.1.12.63
+2026-11-21T10:00:00.688Z [inventory-db] INFO - Handled /api/v1/auth/login in 96ms status 200 from 10.4.227.162
+2026-11-21T10:00:00.696Z [redis-cache] INFO - Handled /api/v1/checkout in 119ms status 200 from 10.4.63.38
+2026-11-21T10:00:00.709Z [auth-service] INFO - Handled /api/v1/auth/login in 107ms status 200 from 10.1.200.109
+{"timestamp":"2026-11-21T10:00:00.718Z","level":"INFO","service":"auth-service","trace_id":"trace-d302b07c90a0","msg":"Handled /api/v1/checkout in 63ms status=200 client_ip=10.4.13.143"}
+2026-11-21T10:00:00.726Z [inventory-db] INFO - Handled /api/v1/cart/items in 101ms status 200 from 10.5.253.144
+{"timestamp":"2026-11-21T10:00:00.736Z","level":"INFO","service":"inventory-db","trace_id":"trace-9de37e3cab5a","msg":"Handled /api/v1/orders/create in 119ms status=200 client_ip=10.5.110.213"}
+2026-11-21T10:00:00.750Z [auth-service] INFO - Handled /api/v1/cart/items in 103ms status 200 from 10.4.116.67
+{"timestamp":"2026-11-21T10:00:00.758Z","level":"INFO","service":"api-gateway","trace_id":"trace-32a39cbc07b5","msg":"Handled /api/v1/cart/items in 35ms status=200 client_ip=10.2.71.113"}
+2026-11-21T10:00:00.764Z [auth-service] INFO - Handled /api/v1/auth/login in 54ms status 200 from 10.5.21.36
+{"timestamp":"2026-11-21T10:00:00.776Z","level":"INFO","service":"payment-service","trace_id":"trace-308f7ad81152","msg":"Handled /api/v1/cart/items in 74ms status=200 client_ip=10.2.17.107"}
+{"timestamp":"2026-11-21T10:00:00.777Z","level":"INFO","service":"payment-service","trace_id":"trace-c092588f6228","msg":"Handled /api/v1/health in 94ms status=200 client_ip=10.2.214.108"}
+2026-11-21T10:00:00.792Z [api-gateway] INFO - Handled /api/v1/cart/items in 43ms status 200 from 10.5.98.123
+2026-11-21T10:00:00.806Z [redis-cache] INFO - Handled /api/v1/health in 107ms status 200 from 10.4.138.192
+{"timestamp":"2026-11-21T10:00:00.810Z","level":"INFO","service":"payment-service","trace_id":"trace-c8943cc1cead","msg":"Handled /api/v1/orders/create in 8ms status=200 client_ip=10.4.57.70"}
+2026-11-21T10:00:00.821Z [payment-service] INFO - Handled /api/v1/auth/login in 84ms status 200 from 10.4.186.43
+2026-11-21T10:00:00.836Z [redis-cache] INFO - Handled /api/v1/checkout in 15ms status 200 from 10.4.152.145
+{"timestamp":"2026-11-21T10:00:00.839Z","level":"INFO","service":"order-service","trace_id":"trace-2f84042baccb","msg":"Handled /api/v1/orders/create in 46ms status=200 client_ip=10.4.47.13"}
+2026-11-21T10:00:00.845Z [payment-service] INFO - Handled /api/v1/cart/items in 101ms status 200 from 10.3.195.226
+2026-11-21T10:00:00.852Z [payment-service] INFO - Handled /api/v1/checkout in 100ms status 200 from 10.3.214.21
+{"timestamp":"2026-11-21T10:00:00.858Z","level":"INFO","service":"redis-cache","trace_id":"trace-1e8ebcb09b47","msg":"Handled /api/v1/checkout in 101ms status=200 client_ip=10.2.167.18"}
+{"timestamp":"2026-11-21T10:00:00.862Z","level":"INFO","service":"inventory-db","trace_id":"trace-5fc33e5ffaeb","msg":"Handled /api/v1/auth/login in 35ms status=200 client_ip=10.2.215.6"}
+{"timestamp":"2026-11-21T10:00:00.873Z","level":"INFO","service":"auth-service","trace_id":"trace-23ff17341eb1","msg":"Handled /api/v1/orders/create in 94ms status=200 client_ip=10.1.145.243"}
+2026-11-21T10:00:00.879Z [redis-cache] INFO - Handled /api/v1/checkout in 104ms status 200 from 10.2.156.156
+2026-11-21T10:00:00.884Z [order-service] INFO - Handled /api/v1/health in 91ms status 200 from 10.1.149.7
+2026-11-21T10:00:00.891Z [auth-service] INFO - Handled /api/v1/checkout in 80ms status 200 from 10.4.242.184
+{"timestamp":"2026-11-21T10:00:00.902Z","level":"INFO","service":"order-service","trace_id":"trace-eef4f3d5dc1c","msg":"Handled /api/v1/health in 108ms status=200 client_ip=10.2.27.179"}
+2026-11-21T10:00:00.912Z [payment-service] INFO - Handled /api/v1/cart/items in 13ms status 200 from 10.1.89.137
+2026-11-21T10:00:00.918Z [payment-service] INFO - Handled /api/v1/checkout in 60ms status 200 from 10.1.218.108
+2026-11-21T10:00:00.929Z [payment-service] INFO - Handled /api/v1/auth/login in 98ms status 200 from 10.4.182.40
+{"timestamp":"2026-11-21T10:00:00.940Z","level":"INFO","service":"inventory-db","trace_id":"trace-11e455dbf602","msg":"Handled /api/v1/orders/create in 64ms status=200 client_ip=10.3.158.207"}
+2026-11-21T10:00:00.952Z [auth-service] INFO - Handled /api/v1/checkout in 40ms status 200 from 10.5.69.83
+{"timestamp":"2026-11-21T10:00:00.956Z","level":"INFO","service":"redis-cache","trace_id":"trace-854a25df8083","msg":"Handled /api/v1/orders/create in 48ms status=200 client_ip=10.4.146.157"}
+{"timestamp":"2026-11-21T10:00:00.970Z","level":"INFO","service":"auth-service","trace_id":"trace-9902e0b0570b","msg":"Handled /api/v1/cart/items in 107ms status=200 client_ip=10.3.47.125"}
+2026-11-21T10:00:00.975Z [order-service] INFO - Handled /api/v1/health in 6ms status 200 from 10.5.180.226
+2026-11-21T10:00:00.979Z [payment-service] INFO - Handled /api/v1/orders/create in 76ms status 200 from 10.1.62.185
+{"timestamp":"2026-11-21T10:00:00.991Z","level":"INFO","service":"payment-service","trace_id":"trace-78b9e1b0f747","msg":"Handled /api/v1/orders/create in 106ms status=200 client_ip=10.4.166.183"}
+2026-11-21T10:00:00.996Z [auth-service] INFO - Handled /api/v1/cart/items in 89ms status 200 from 10.2.104.178
+{"timestamp":"2026-11-21T10:00:01.004Z","level":"INFO","service":"payment-service","trace_id":"trace-c302fe7aa00e","msg":"Handled /api/v1/health in 47ms status=200 client_ip=10.5.136.89"}
+{"timestamp":"2026-11-21T10:00:01.012Z","level":"INFO","service":"auth-service","trace_id":"trace-f32f2c3a8e01","msg":"Handled /api/v1/checkout in 97ms status=200 client_ip=10.3.79.65"}
+{"timestamp":"2026-11-21T10:00:01.014Z","level":"INFO","service":"redis-cache","trace_id":"trace-b1da08072ce8","msg":"Handled /api/v1/auth/login in 29ms status=200 client_ip=10.5.244.196"}
+2026-11-21T10:00:01.022Z [inventory-db] INFO - Handled /api/v1/health in 41ms status 200 from 10.3.186.151
+{"timestamp":"2026-11-21T10:00:01.036Z","level":"INFO","service":"order-service","trace_id":"trace-a134659b515f","msg":"Handled /api/v1/auth/login in 43ms status=200 client_ip=10.2.76.59"}
+2026-11-21T10:00:01.045Z [api-gateway] INFO - Handled /api/v1/health in 42ms status 200 from 10.2.71.12
+{"timestamp":"2026-11-21T10:00:01.048Z","level":"INFO","service":"api-gateway","trace_id":"trace-7a222c675912","msg":"Handled /api/v1/health in 41ms status=200 client_ip=10.4.27.224"}
+{"timestamp":"2026-11-21T10:00:01.056Z","level":"INFO","service":"api-gateway","trace_id":"trace-a2acb474a64d","msg":"Handled /api/v1/cart/items in 115ms status=200 client_ip=10.3.48.248"}
+2026-11-21T10:00:01.070Z [api-gateway] INFO - Handled /api/v1/health in 85ms status 200 from 10.1.103.126
+{"timestamp":"2026-11-21T10:00:01.073Z","level":"INFO","service":"order-service","trace_id":"trace-2ef43d77fa15","msg":"Handled /api/v1/checkout in 36ms status=200 client_ip=10.2.208.145"}
+2026-11-21T10:00:01.086Z [inventory-db] INFO - Handled /api/v1/auth/login in 104ms status 200 from 10.4.156.153
+2026-11-21T10:00:01.094Z [inventory-db] INFO - Handled /api/v1/orders/create in 44ms status 200 from 10.4.77.221
+{"timestamp":"2026-11-21T10:00:01.095Z","level":"INFO","service":"api-gateway","trace_id":"trace-6cd595f65c4f","msg":"Handled /api/v1/auth/login in 85ms status=200 client_ip=10.5.246.190"}
+{"timestamp":"2026-11-21T10:00:01.106Z","level":"INFO","service":"auth-service","trace_id":"trace-624b600c8538","msg":"Handled /api/v1/health in 14ms status=200 client_ip=10.1.41.62"}
+{"timestamp":"2026-11-21T10:00:01.113Z","level":"INFO","service":"payment-service","trace_id":"trace-5118b68c431b","msg":"Handled /api/v1/cart/items in 9ms status=200 client_ip=10.4.177.153"}
+{"timestamp":"2026-11-21T10:00:01.125Z","level":"INFO","service":"payment-service","trace_id":"trace-b8551b91f04a","msg":"Handled /api/v1/checkout in 92ms status=200 client_ip=10.3.180.221"}
+2026-11-21T10:00:01.130Z [auth-service] INFO - Handled /api/v1/orders/create in 19ms status 200 from 10.5.170.206
+{"timestamp":"2026-11-21T10:00:01.141Z","level":"INFO","service":"auth-service","trace_id":"trace-42e98532c61e","msg":"Handled /api/v1/checkout in 12ms status=200 client_ip=10.2.233.69"}
+{"timestamp":"2026-11-21T10:00:01.146Z","level":"INFO","service":"inventory-db","trace_id":"trace-1d07fd918446","msg":"Handled /api/v1/cart/items in 61ms status=200 client_ip=10.5.192.212"}
+{"timestamp":"2026-11-21T10:00:01.158Z","level":"INFO","service":"order-service","trace_id":"trace-fb9d241f74f1","msg":"Handled /api/v1/health in 74ms status=200 client_ip=10.3.180.104"}
+{"timestamp":"2026-11-21T10:00:01.160Z","level":"INFO","service":"payment-service","trace_id":"trace-9e8527c61bb3","msg":"Handled /api/v1/cart/items in 82ms status=200 client_ip=10.5.11.228"}
+2026-11-21T10:00:01.162Z [inventory-db] INFO - Handled /api/v1/health in 7ms status 200 from 10.2.247.173
+2026-11-21T10:00:01.173Z [auth-service] INFO - Handled /api/v1/orders/create in 71ms status 200 from 10.3.148.11
+{"timestamp":"2026-11-21T10:00:01.188Z","level":"INFO","service":"payment-service","trace_id":"trace-7f1cd22a73df","msg":"Handled /api/v1/orders/create in 16ms status=200 client_ip=10.3.47.150"}
+{"timestamp":"2026-11-21T10:00:01.195Z","level":"INFO","service":"api-gateway","trace_id":"trace-428e30b13fc6","msg":"Handled /api/v1/auth/login in 47ms status=200 client_ip=10.3.83.172"}
+{"timestamp":"2026-11-21T10:00:01.203Z","level":"INFO","service":"payment-service","trace_id":"trace-7ef1a781ea04","msg":"Handled /api/v1/health in 9ms status=200 client_ip=10.3.170.242"}
+2026-11-21T10:00:01.209Z [payment-service] INFO - Handled /api/v1/health in 110ms status 200 from 10.3.83.30
+{"timestamp":"2026-11-21T10:00:01.220Z","level":"INFO","service":"api-gateway","trace_id":"trace-7fe206134e41","msg":"Handled /api/v1/auth/login in 71ms status=200 client_ip=10.5.119.106"}
+2026-11-21T10:00:01.233Z [api-gateway] INFO - Handled /api/v1/auth/login in 39ms status 200 from 10.4.161.114
+{"timestamp":"2026-11-21T10:00:01.248Z","level":"INFO","service":"redis-cache","trace_id":"trace-a9915bde065d","msg":"Handled /api/v1/orders/create in 20ms status=200 client_ip=10.3.113.226"}
+2026-11-21T10:00:01.259Z [redis-cache] INFO - Handled /api/v1/auth/login in 44ms status 200 from 10.5.205.62
+2026-11-21T10:00:01.268Z [api-gateway] INFO - Handled /api/v1/orders/create in 20ms status 200 from 10.4.24.58
+{"timestamp":"2026-11-21T10:00:01.271Z","level":"INFO","service":"order-service","trace_id":"trace-0ea11fce84ff","msg":"Handled /api/v1/health in 95ms status=200 client_ip=10.4.239.184"}
+{"timestamp":"2026-11-21T10:00:01.285Z","level":"INFO","service":"auth-service","trace_id":"trace-ff2131839f6d","msg":"Handled /api/v1/orders/create in 75ms status=200 client_ip=10.4.251.121"}
+2026-11-21T10:00:01.289Z [auth-service] INFO - Handled /api/v1/checkout in 40ms status 200 from 10.5.131.192
+{"timestamp":"2026-11-21T10:00:01.303Z","level":"INFO","service":"inventory-db","trace_id":"trace-b5c9565bafbb","msg":"Handled /api/v1/cart/items in 110ms status=200 client_ip=10.4.88.240"}
+{"timestamp":"2026-11-21T10:00:01.315Z","level":"INFO","service":"inventory-db","trace_id":"trace-72cae960358d","msg":"Handled /api/v1/orders/create in 115ms status=200 client_ip=10.3.215.151"}
+{"timestamp":"2026-11-21T10:00:01.324Z","level":"INFO","service":"inventory-db","trace_id":"trace-7c8673f95533","msg":"Handled /api/v1/health in 53ms status=200 client_ip=10.4.89.86"}
+{"timestamp":"2026-11-21T10:00:01.330Z","level":"INFO","service":"auth-service","trace_id":"trace-0a0343a8defb","msg":"Handled /api/v1/health in 54ms status=200 client_ip=10.2.252.179"}
+2026-11-21T10:00:01.343Z [redis-cache] INFO - Handled /api/v1/orders/create in 95ms status 200 from 10.4.12.82
+2026-11-21T10:00:01.350Z [redis-cache] INFO - Handled /api/v1/auth/login in 68ms status 200 from 10.4.254.170
+2026-11-21T10:00:01.353Z [order-service] INFO - Handled /api/v1/checkout in 116ms status 200 from 10.5.248.152
+2026-11-21T10:00:01.355Z [api-gateway] INFO - Handled /api/v1/auth/login in 57ms status 200 from 10.5.234.117
+2026-11-21T10:00:01.358Z [order-service] INFO - Handled /api/v1/cart/items in 84ms status 200 from 10.1.121.201
+2026-11-21T10:00:01.369Z [redis-cache] INFO - Handled /api/v1/health in 53ms status 200 from 10.1.219.85
+{"timestamp":"2026-11-21T10:00:01.380Z","level":"INFO","service":"api-gateway","trace_id":"trace-5516796ee7e7","msg":"Handled /api/v1/health in 13ms status=200 client_ip=10.4.224.139"}
+2026-11-21T10:00:01.391Z [api-gateway] INFO - Handled /api/v1/orders/create in 17ms status 200 from 10.3.59.192
+{"timestamp":"2026-11-21T10:00:01.403Z","level":"INFO","service":"redis-cache","trace_id":"trace-63bd3c87422d","msg":"Handled /api/v1/cart/items in 120ms status=200 client_ip=10.1.114.43"}
+{"timestamp":"2026-11-21T10:00:01.409Z","level":"INFO","service":"order-service","trace_id":"trace-89a1f7458707","msg":"Handled /api/v1/orders/create in 23ms status=200 client_ip=10.1.76.92"}
+{"timestamp":"2026-11-21T10:00:01.416Z","level":"INFO","service":"auth-service","trace_id":"trace-3a06271965e3","msg":"Handled /api/v1/auth/login in 27ms status=200 client_ip=10.5.175.203"}
+{"timestamp":"2026-11-21T10:00:01.430Z","level":"INFO","service":"auth-service","trace_id":"trace-c2eb47511f31","msg":"Handled /api/v1/orders/create in 79ms status=200 client_ip=10.4.159.175"}
+2026-11-21T10:00:01.438Z [redis-cache] INFO - Handled /api/v1/checkout in 120ms status 200 from 10.3.118.66
+2026-11-21T10:00:01.453Z [auth-service] INFO - Handled /api/v1/checkout in 61ms status 200 from 10.3.174.140
+2026-11-21T10:00:01.463Z [payment-service] INFO - Handled /api/v1/cart/items in 63ms status 200 from 10.3.164.247
+2026-11-21T10:00:01.467Z [api-gateway] INFO - Handled /api/v1/auth/login in 53ms status 200 from 10.4.219.124
+{"timestamp":"2026-11-21T10:00:01.477Z","level":"INFO","service":"api-gateway","trace_id":"trace-2af80581aece","msg":"Handled /api/v1/orders/create in 40ms status=200 client_ip=10.3.180.76"}
+2026-11-21T10:00:01.491Z [redis-cache] INFO - Handled /api/v1/orders/create in 111ms status 200 from 10.1.234.156
+{"timestamp":"2026-11-21T10:00:01.496Z","level":"INFO","service":"order-service","trace_id":"trace-2c17f23bad1f","msg":"Handled /api/v1/auth/login in 86ms status=200 client_ip=10.2.156.206"}
+2026-11-21T10:00:01.501Z [redis-cache] INFO - Handled /api/v1/checkout in 44ms status 200 from 10.2.161.25
+{"timestamp":"2026-11-21T10:00:01.502Z","level":"INFO","service":"auth-service","trace_id":"trace-e821b5c125e4","msg":"Handled /api/v1/checkout in 42ms status=200 client_ip=10.5.94.188"}
+2026-11-21T10:00:01.509Z [inventory-db] INFO - Handled /api/v1/cart/items in 72ms status 200 from 10.2.52.34
+2026-11-21T10:00:01.514Z [payment-service] INFO - Handled /api/v1/cart/items in 100ms status 200 from 10.2.66.234
+2026-11-21T10:00:01.527Z [api-gateway] INFO - Handled /api/v1/auth/login in 101ms status 200 from 10.1.120.247
+2026-11-21T10:00:01.541Z [inventory-db] INFO - Handled /api/v1/cart/items in 16ms status 200 from 10.4.248.217
+2026-11-21T10:00:01.542Z [payment-service] INFO - Handled /api/v1/cart/items in 91ms status 200 from 10.3.138.32
+2026-11-21T10:00:01.547Z [redis-cache] INFO - Handled /api/v1/cart/items in 18ms status 200 from 10.5.98.211
+{"timestamp":"2026-11-21T10:00:01.555Z","level":"INFO","service":"inventory-db","trace_id":"trace-39c1e48c6a69","msg":"Handled /api/v1/cart/items in 83ms status=200 client_ip=10.1.159.227"}
+{"timestamp":"2026-11-21T10:00:01.557Z","level":"INFO","service":"order-service","trace_id":"trace-11bdf57ddd43","msg":"Handled /api/v1/orders/create in 19ms status=200 client_ip=10.4.233.180"}
+2026-11-21T10:00:01.558Z [api-gateway] INFO - Handled /api/v1/auth/login in 118ms status 200 from 10.3.127.30
+2026-11-21T10:00:01.565Z [redis-cache] INFO - Handled /api/v1/health in 58ms status 200 from 10.4.95.172
+{"timestamp":"2026-11-21T10:00:01.577Z","level":"INFO","service":"redis-cache","trace_id":"trace-ca3483271dac","msg":"Handled /api/v1/checkout in 111ms status=200 client_ip=10.2.227.107"}
+{"timestamp":"2026-11-21T10:00:01.584Z","level":"INFO","service":"order-service","trace_id":"trace-83831656970e","msg":"Handled /api/v1/auth/login in 61ms status=200 client_ip=10.3.9.177"}
+2026-11-21T10:00:01.588Z [redis-cache] INFO - Handled /api/v1/cart/items in 74ms status 200 from 10.3.26.252
+2026-11-21T10:00:01.599Z [order-service] INFO - Handled /api/v1/auth/login in 20ms status 200 from 10.3.16.102
+{"timestamp":"2026-11-21T10:00:01.613Z","level":"INFO","service":"auth-service","trace_id":"trace-88641a5fa010","msg":"Handled /api/v1/health in 7ms status=200 client_ip=10.4.24.170"}
+2026-11-21T10:00:01.619Z [inventory-db] INFO - Handled /api/v1/auth/login in 13ms status 200 from 10.2.254.33
+{"timestamp":"2026-11-21T10:00:01.628Z","level":"INFO","service":"auth-service","trace_id":"trace-d66ec9e1fbd1","msg":"Handled /api/v1/cart/items in 104ms status=200 client_ip=10.2.151.56"}
+{"timestamp":"2026-11-21T10:00:01.643Z","level":"INFO","service":"auth-service","trace_id":"trace-bc082b818833","msg":"Handled /api/v1/auth/login in 74ms status=200 client_ip=10.5.1.71"}
+{"timestamp":"2026-11-21T10:00:01.646Z","level":"INFO","service":"api-gateway","trace_id":"trace-df12525a9e15","msg":"Handled /api/v1/auth/login in 6ms status=200 client_ip=10.1.170.222"}
+{"timestamp":"2026-11-21T10:00:01.659Z","level":"INFO","service":"api-gateway","trace_id":"trace-0df068f6e8a6","msg":"Handled /api/v1/auth/login in 38ms status=200 client_ip=10.2.151.83"}
+{"timestamp":"2026-11-21T10:00:01.671Z","level":"INFO","service":"redis-cache","trace_id":"trace-d11ca9775aad","msg":"Handled /api/v1/checkout in 65ms status=200 client_ip=10.4.135.30"}
+2026-11-21T10:00:01.677Z [payment-service] INFO - Handled /api/v1/health in 33ms status 200 from 10.5.152.28
+2026-11-21T10:00:01.678Z [redis-cache] INFO - Handled /api/v1/checkout in 12ms status 200 from 10.5.78.118
+2026-11-21T10:00:01.692Z [api-gateway] INFO - Handled /api/v1/orders/create in 96ms status 200 from 10.4.110.176
+{"timestamp":"2026-11-21T10:00:01.694Z","level":"INFO","service":"auth-service","trace_id":"trace-69a02787fb38","msg":"Handled /api/v1/checkout in 21ms status=200 client_ip=10.1.83.156"}
+2026-11-21T10:00:01.705Z [order-service] INFO - Handled /api/v1/orders/create in 81ms status 200 from 10.5.141.183
+2026-11-21T10:00:01.713Z [api-gateway] INFO - Handled /api/v1/checkout in 114ms status 200 from 10.5.155.111
+2026-11-21T10:00:01.728Z [auth-service] INFO - Handled /api/v1/orders/create in 62ms status 200 from 10.5.185.222
+{"timestamp":"2026-11-21T10:00:01.735Z","level":"INFO","service":"payment-service","trace_id":"trace-5cf881517f58","msg":"Handled /api/v1/orders/create in 98ms status=200 client_ip=10.3.212.117"}
+2026-11-21T10:00:01.742Z [order-service] INFO - Handled /api/v1/auth/login in 92ms status 200 from 10.3.171.66
+2026-11-21T10:00:01.744Z [api-gateway] INFO - Handled /api/v1/orders/create in 17ms status 200 from 10.1.213.22
+{"timestamp":"2026-11-21T10:00:01.750Z","level":"INFO","service":"inventory-db","trace_id":"trace-85960152ae78","msg":"Handled /api/v1/health in 76ms status=200 client_ip=10.2.143.16"}
+2026-11-21T10:00:01.752Z [redis-cache] INFO - Handled /api/v1/orders/create in 116ms status 200 from 10.4.91.224
+2026-11-21T10:00:01.753Z [order-service] INFO - Handled /api/v1/checkout in 78ms status 200 from 10.3.154.80
+2026-11-21T10:00:01.756Z [api-gateway] INFO - Handled /api/v1/cart/items in 113ms status 200 from 10.4.58.217
+2026-11-21T10:00:01.758Z [payment-service] INFO - Handled /api/v1/health in 103ms status 200 from 10.3.147.58
+{"timestamp":"2026-11-21T10:00:01.768Z","level":"INFO","service":"redis-cache","trace_id":"trace-e071305d9cbd","msg":"Handled /api/v1/cart/items in 8ms status=200 client_ip=10.5.7.156"}
+2026-11-21T10:00:01.780Z [order-service] INFO - Handled /api/v1/checkout in 28ms status 200 from 10.3.236.87
+2026-11-21T10:00:01.790Z [redis-cache] INFO - Handled /api/v1/checkout in 16ms status 200 from 10.4.18.37
+{"timestamp":"2026-11-21T10:00:01.794Z","level":"INFO","service":"order-service","trace_id":"trace-7f2ddc57fec7","msg":"Handled /api/v1/auth/login in 52ms status=200 client_ip=10.4.108.117"}
+2026-11-21T10:00:01.800Z [api-gateway] INFO - Handled /api/v1/auth/login in 25ms status 200 from 10.5.153.22
+2026-11-21T10:00:01.801Z [redis-cache] INFO - Handled /api/v1/orders/create in 67ms status 200 from 10.1.70.114
+{"timestamp":"2026-11-21T10:00:01.808Z","level":"INFO","service":"inventory-db","trace_id":"trace-baf3461befd5","msg":"Handled /api/v1/checkout in 49ms status=200 client_ip=10.3.56.194"}
+{"timestamp":"2026-11-21T10:00:01.813Z","level":"INFO","service":"redis-cache","trace_id":"trace-b07a452cc388","msg":"Handled /api/v1/cart/items in 10ms status=200 client_ip=10.5.125.135"}
+{"timestamp":"2026-11-21T10:00:01.823Z","level":"INFO","service":"order-service","trace_id":"trace-430dfa44984c","msg":"Handled /api/v1/auth/login in 103ms status=200 client_ip=10.1.2.53"}
+{"timestamp":"2026-11-21T10:00:01.828Z","level":"INFO","service":"api-gateway","trace_id":"trace-19d2752208f9","msg":"Handled /api/v1/orders/create in 100ms status=200 client_ip=10.3.84.31"}
+2026-11-21T10:00:01.831Z [auth-service] INFO - Handled /api/v1/health in 76ms status 200 from 10.4.137.181
+{"timestamp":"2026-11-21T10:00:01.844Z","level":"INFO","service":"redis-cache","trace_id":"trace-e9499cb6822a","msg":"Handled /api/v1/checkout in 60ms status=200 client_ip=10.3.19.102"}
+{"timestamp":"2026-11-21T10:00:01.859Z","level":"INFO","service":"inventory-db","trace_id":"trace-1d41ba5e748b","msg":"Handled /api/v1/orders/create in 78ms status=200 client_ip=10.1.221.81"}
+{"timestamp":"2026-11-21T10:00:01.870Z","level":"INFO","service":"payment-service","trace_id":"trace-8d21bae71326","msg":"Handled /api/v1/checkout in 46ms status=200 client_ip=10.4.75.30"}
+{"timestamp":"2026-11-21T10:00:01.880Z","level":"INFO","service":"api-gateway","trace_id":"trace-90fefea5ef70","msg":"Handled /api/v1/orders/create in 113ms status=200 client_ip=10.4.213.177"}
+2026-11-21T10:00:01.887Z [inventory-db] ERROR - Connection pool exhausted: HikariPool-1 - Connection is not available, request timed out after 3000ms (total=100, active=100, idle=0, waiting=42)
+    java.sql.SQLTransientConnectionException: Connection is not available, request timed out after 3000ms.
+        at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:213)
+        at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:163)
+        at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+        at com.example.inventory.repository.ItemRepository.reserveStock(ItemRepository.java:87)
+2026-11-21T10:00:01.901Z [inventory-db] ERROR - Connection pool exhausted: HikariPool-1 - Connection is not available, request timed out after 3000ms (total=100, active=100, idle=0, waiting=42)
+    java.sql.SQLTransientConnectionException: Connection is not available, request timed out after 3000ms.
+        at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:213)
+        at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:163)
+        at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+        at com.example.inventory.repository.ItemRepository.reserveStock(ItemRepository.java:87)
+2026-11-21T10:00:01.914Z [inventory-db] INFO - Handled /api/v1/health in 29ms status 200 from 10.2.20.131
+{"timestamp":"2026-11-21T10:00:01.920Z","level":"INFO","service":"auth-service","trace_id":"trace-73d5a20dcf24","msg":"Handled /api/v1/auth/login in 18ms status=200 client_ip=10.3.187.246"}
+2026-11-21T10:00:01.924Z [redis-cache] INFO - Handled /api/v1/checkout in 27ms status 200 from 10.2.155.40
+2026-11-21T10:00:01.935Z [payment-service] WARN - Inbound message queue saturation reached 94% (9459/10000 messages) backpressure applied
+{"timestamp":"2026-11-21T10:00:01.946Z","level":"INFO","service":"order-service","trace_id":"trace-7b54564ce49f","msg":"Handled /api/v1/cart/items in 24ms status=200 client_ip=10.5.165.163"}
+2026-11-21T10:00:01.954Z [inventory-db] INFO - Handled /api/v1/checkout in 50ms status 200 from 10.4.162.78
+{"timestamp":"2026-11-21T10:00:01.959Z","level":"ERROR","service":"order-service","trace_id":"trace-3c24b7b12464","msg":"Upstream inventory-db returned HTTP 504 Gateway Timeout on attempt 4/5 target=http://10.2.14.88:5432/reserve"}
+2026-11-21T10:00:01.961Z [payment-service] WARN - Inbound message queue saturation reached 92% (9594/10000 messages) backpressure applied
+2026-11-21T10:00:01.970Z [redis-cache] INFO - Handled /api/v1/auth/login in 46ms status 200 from 10.1.116.233
+2026-11-21T10:00:01.979Z [payment-service] WARN - Inbound message queue saturation reached 97% (9920/10000 messages) backpressure applied
+{"timestamp":"2026-11-21T10:00:01.993Z","level":"ERROR","service":"order-service","trace_id":"trace-3b18d4dbfcc2","msg":"Upstream inventory-db returned HTTP 504 Gateway Timeout on attempt 3/5 target=http://10.2.14.88:5432/reserve"}
+{"timestamp":"2026-11-21T10:00:01.994Z","level":"INFO","service":"inventory-db","trace_id":"trace-36d2a4115dfe","msg":"Handled /api/v1/health in 83ms status=200 client_ip=10.2.182.113"}
+2026-11-21T10:00:02.000Z [redis-cache] INFO - Handled /api/v1/health in 11ms status 200 from 10.3.100.105
+{"timestamp":"2026-11-21T10:00:02.011Z","level":"ERROR","service":"order-service","trace_id":"trace-ded458ac2797","msg":"Upstream inventory-db returned HTTP 504 Gateway Timeout on attempt 5/5 target=http://10.2.14.88:5432/reserve"}
+2026-11-21T10:00:02.016Z [payment-service] WARN - Inbound message queue saturation reached 99% (9617/10000 messages) backpressure applied
+2026-11-21T10:00:02.030Z [payment-service] WARN - Inbound message queue saturation reached 87% (9938/10000 messages) backpressure applied
+2026-11-21T10:00:02.036Z [payment-service] WARN - Inbound message queue saturation reached 91% (9132/10000 messages) backpressure applied
+{"timestamp":"2026-11-21T10:00:02.046Z","level":"ERROR","service":"order-service","trace_id":"trace-b8d2430a4215","msg":"Upstream inventory-db returned HTTP 504 Gateway Timeout on attempt 4/5 target=http://10.2.14.88:5432/reserve"}
+2026-11-21T10:00:02.060Z [redis-cache] INFO - Handled /api/v1/health in 16ms status 200 from 10.2.172.180
+{"timestamp":"2026-11-21T10:00:02.067Z","level":"ERROR","service":"order-service","trace_id":"trace-340896bd611b","msg":"Upstream inventory-db returned HTTP 504 Gateway Timeout on attempt 3/5 target=http://10.2.14.88:5432/reserve"}
+2026-11-21T10:00:02.071Z [payment-service] WARN - Inbound message queue saturation reached 88% (9140/10000 messages) backpressure applied
+2026-11-21T10:00:02.074Z [inventory-db] INFO - Handled /api/v1/health in 111ms status 200 from 10.1.76.217
+{"timestamp":"2026-11-21T10:00:02.083Z","level":"FATAL","service":"api-gateway","trace_id":"trace-dcc0d6a126dd","msg":"Fatal runtime failure: java.lang.OutOfMemoryError: Java heap space"}
+    java.lang.OutOfMemoryError: Java heap space
+        at java.base/java.util.Arrays.copyOf(Arrays.java:3537)
+        at java.base/java.io.ByteArrayOutputStream.grow(ByteArrayOutputStream.java:118)
+        at io.netty.buffer.PoolArena.allocateChunk(PoolArena.java:234)
+        at io.netty.buffer.PooledByteBufAllocator.newDirectBuffer(PooledByteBufAllocator.java:395)
+2026-11-21T10:00:02.083Z [kernel] FATAL - Out of memory: Killed process 1482 (api-gateway) total-vm:4194304kB, anon-rss:3984128kB, file-rss:0kB
+{"timestamp":"2026-11-21T10:00:02.098Z","level":"FATAL","service":"api-gateway","trace_id":"trace-609514a9b293","msg":"Fatal runtime failure: java.lang.OutOfMemoryError: Java heap space"}
+    java.lang.OutOfMemoryError: Java heap space
+        at java.base/java.util.Arrays.copyOf(Arrays.java:3537)
+        at java.base/java.io.ByteArrayOutputStream.grow(ByteArrayOutputStream.java:118)
+        at io.netty.buffer.PoolArena.allocateChunk(PoolArena.java:234)
+        at io.netty.buffer.PooledByteBufAllocator.newDirectBuffer(PooledByteBufAllocator.java:395)
+2026-11-21T10:00:02.098Z [kernel] FATAL - Out of memory: Killed process 1482 (api-gateway) total-vm:4194304kB, anon-rss:3984128kB, file-rss:0kB
+2026-11-21T10:00:02.105Z [redis-cache] INFO - Handled /api/v1/health in 108ms status 200 from 10.2.42.47
+2026-11-21T10:00:02.117Z [order-service] INFO - Handled /api/v1/auth/login in 61ms status 200 from 10.4.12.106
+2026-11-21T10:00:02.130Z [auth-service] INFO - Handled /api/v1/cart/items in 108ms status 200 from 10.4.60.137
+2026-11-21T10:00:02.145Z [inventory-db] INFO - Handled /api/v1/orders/create in 64ms status 200 from 10.2.95.174
+{"timestamp":"2026-11-21T10:00:02.158Z","level":"INFO","service":"payment-service","trace_id":"trace-356b760ec461","msg":"Handled /api/v1/auth/login in 109ms status=200 client_ip=10.4.129.136"}
+{"timestamp":"2026-11-21T10:00:02.168Z","level":"INFO","service":"api-gateway","trace_id":"trace-6c0578cc70ff","msg":"Handled /api/v1/orders/create in 116ms status=200 client_ip=10.2.224.65"}
+{"timestamp":"2026-11-21T10:00:02.183Z","level":"INFO","service":"inventory-db","trace_id":"trace-9a85692c8cfa","msg":"Handled /api/v1/checkout in 41ms status=200 client_ip=10.1.183.217"}
+{"timestamp":"2026-11-21T10:00:02.186Z","level":"INFO","service":"inventory-db","trace_id":"trace-a8753a912c22","msg":"Handled /api/v1/auth/login in 111ms status=200 client_ip=10.3.116.232"}
+{"timestamp":"2026-11-21T10:00:02.201Z","level":"INFO","service":"order-service","trace_id":"trace-0f9ab6794f82","msg":"Handled /api/v1/checkout in 58ms status=200 client_ip=10.2.210.116"}
+{"timestamp":"2026-11-21T10:00:02.210Z","level":"INFO","service":"api-gateway","trace_id":"trace-9cc38e5ae2af","msg":"Handled /api/v1/cart/items in 33ms status=200 client_ip=10.3.61.99"}
+{"timestamp":"2026-11-21T10:00:02.225Z","level":"INFO","service":"redis-cache","trace_id":"trace-4081cac6a252","msg":"Handled /api/v1/cart/items in 106ms status=200 client_ip=10.1.215.183"}
+2026-11-21T10:00:02.226Z [payment-service] INFO - Handled /api/v1/auth/login in 102ms status 200 from 10.3.235.213
+{"timestamp":"2026-11-21T10:00:02.234Z","level":"INFO","service":"api-gateway","trace_id":"trace-f1778d2365c0","msg":"Handled /api/v1/checkout in 37ms status=200 client_ip=10.5.2.232"}
+{"timestamp":"2026-11-21T10:00:02.237Z","level":"INFO","service":"inventory-db","trace_id":"trace-c0a8506a37f3","msg":"Handled /api/v1/health in 59ms status=200 client_ip=10.5.241.187"}
+2026-11-21T10:00:02.242Z [api-gateway] INFO - Handled /api/v1/auth/login in 58ms status 200 from 10.2.78.32
+{"timestamp":"2026-11-21T10:00:02.252Z","level":"INFO","service":"payment-service","trace_id":"trace-bb643c682d64","msg":"Handled /api/v1/health in 73ms status=200 client_ip=10.4.17.29"}
+{"timestamp":"2026-11-21T10:00:02.261Z","level":"INFO","service":"auth-service","trace_id":"trace-7840a47be71f","msg":"Handled /api/v1/cart/items in 59ms status=200 client_ip=10.5.62.184"}
+2026-11-21T10:00:02.267Z [auth-service] INFO - Handled /api/v1/checkout in 72ms status 200 from 10.2.147.107
+{"timestamp":"2026-11-21T10:00:02.269Z","level":"INFO","service":"inventory-db","trace_id":"trace-85bc5ed36702","msg":"Handled /api/v1/health in 7ms status=200 client_ip=10.5.140.130"}
+{"timestamp":"2026-11-21T10:00:02.277Z","level":"INFO","service":"order-service","trace_id":"trace-83091f16aca6","msg":"Handled /api/v1/cart/items in 100ms status=200 client_ip=10.1.163.100"}
+2026-11-21T10:00:02.290Z [redis-cache] INFO - Handled /api/v1/checkout in 103ms status 200 from 10.1.89.62
+2026-11-21T10:00:02.303Z [order-service] INFO - Handled /api/v1/health in 48ms status 200 from 10.3.35.12
+{"timestamp":"2026-11-21T10:00:02.306Z","level":"INFO","service":"payment-service","trace_id":"trace-8b4826e81d2d","msg":"Handled /api/v1/auth/login in 108ms status=200 client_ip=10.4.252.179"}
+{"timestamp":"2026-11-21T10:00:02.318Z","level":"INFO","service":"auth-service","trace_id":"trace-bf9d61b24e6a","msg":"Handled /api/v1/checkout in 106ms status=200 client_ip=10.4.10.76"}
+2026-11-21T10:00:02.319Z [inventory-db] INFO - Handled /api/v1/orders/create in 109ms status 200 from 10.3.239.80
+2026-11-21T10:00:02.324Z [auth-service] INFO - Handled /api/v1/cart/items in 50ms status 200 from 10.1.193.166
+{"timestamp":"2026-11-21T10:00:02.325Z","level":"INFO","service":"order-service","trace_id":"trace-7cc935961074","msg":"Handled /api/v1/orders/create in 118ms status=200 client_ip=10.3.70.32"}
+{"timestamp":"2026-11-21T10:00:02.333Z","level":"INFO","service":"auth-service","trace_id":"trace-40572c1d00a4","msg":"Handled /api/v1/orders/create in 93ms status=200 client_ip=10.4.87.250"}
+{"timestamp":"2026-11-21T10:00:02.348Z","level":"INFO","service":"api-gateway","trace_id":"trace-a2d7c141bd0d","msg":"Handled /api/v1/orders/create in 15ms status=200 client_ip=10.5.69.206"}
+{"timestamp":"2026-11-21T10:00:02.362Z","level":"INFO","service":"order-service","trace_id":"trace-5c005b631c5a","msg":"Handled /api/v1/checkout in 15ms status=200 client_ip=10.2.140.76"}
+2026-11-21T10:00:02.367Z [redis-cache] INFO - Handled /api/v1/orders/create in 26ms status 200 from 10.3.115.155
+{"timestamp":"2026-11-21T10:00:02.373Z","level":"INFO","service":"order-service","trace_id":"trace-d8577de90909","msg":"Handled /api/v1/health in 60ms status=200 client_ip=10.4.11.187"}
+2026-11-21T10:00:02.386Z [redis-cache] INFO - Handled /api/v1/orders/create in 51ms status 200 from 10.1.20.172
+2026-11-21T10:00:02.398Z [auth-service] INFO - Handled /api/v1/health in 91ms status 200 from 10.2.244.8
+{"timestamp":"2026-11-21T10:00:02.399Z","level":"INFO","service":"redis-cache","trace_id":"trace-ddfa55179e96","msg":"Handled /api/v1/cart/items in 51ms status=200 client_ip=10.2.18.61"}
+{"timestamp":"2026-11-21T10:00:02.409Z","level":"INFO","service":"redis-cache","trace_id":"trace-b40520f596b1","msg":"Handled /api/v1/orders/create in 52ms status=200 client_ip=10.1.155.40"}
+{"timestamp":"2026-11-21T10:00:02.422Z","level":"INFO","service":"inventory-db","trace_id":"trace-538f5106420d","msg":"Handled /api/v1/cart/items in 55ms status=200 client_ip=10.1.147.36"}
+2026-11-21T10:00:02.427Z [api-gateway] INFO - Handled /api/v1/auth/login in 68ms status 200 from 10.2.246.30
+2026-11-21T10:00:02.442Z [order-service] INFO - Handled /api/v1/orders/create in 32ms status 200 from 10.5.31.68
+{"timestamp":"2026-11-21T10:00:02.447Z","level":"INFO","service":"auth-service","trace_id":"trace-0cc998e3a837","msg":"Handled /api/v1/checkout in 62ms status=200 client_ip=10.4.52.32"}
+{"timestamp":"2026-11-21T10:00:02.459Z","level":"INFO","service":"redis-cache","trace_id":"trace-5233f11fc982","msg":"Handled /api/v1/cart/items in 90ms status=200 client_ip=10.4.23.208"}
+2026-11-21T10:00:02.461Z [order-service] INFO - Handled /api/v1/auth/login in 96ms status 200 from 10.5.139.75
+2026-11-21T10:00:02.473Z [inventory-db] INFO - Handled /api/v1/auth/login in 20ms status 200 from 10.2.204.93
+2026-11-21T10:00:02.486Z [payment-service] INFO - Handled /api/v1/checkout in 51ms status 200 from 10.2.61.203
+2026-11-21T10:00:02.492Z [inventory-db] INFO - Handled /api/v1/auth/login in 83ms status 200 from 10.4.206.252
+{"timestamp":"2026-11-21T10:00:02.494Z","level":"INFO","service":"redis-cache","trace_id":"trace-4851f7759e4c","msg":"Handled /api/v1/orders/create in 72ms status=200 client_ip=10.3.102.184"}
+{"timestamp":"2026-11-21T10:00:02.501Z","level":"INFO","service":"order-service","trace_id":"trace-879bbd376188","msg":"Handled /api/v1/checkout in 62ms status=200 client_ip=10.5.19.33"}
+2026-11-21T10:00:02.510Z [inventory-db] INFO - Handled /api/v1/health in 28ms status 200 from 10.3.33.225
+{"timestamp":"2026-11-21T10:00:02.513Z","level":"INFO","service":"api-gateway","trace_id":"trace-5404a568334c","msg":"Handled /api/v1/checkout in 71ms status=200 client_ip=10.4.129.234"}
+2026-11-21T10:00:02.516Z [redis-cache] INFO - Handled /api/v1/auth/login in 49ms status 200 from 10.2.83.240
+2026-11-21T10:00:02.525Z [order-service] INFO - Handled /api/v1/auth/login in 86ms status 200 from 10.3.217.21
+2026-11-21T10:00:02.530Z [inventory-db] INFO - Handled /api/v1/health in 16ms status 200 from 10.2.161.78
+2026-11-21T10:00:02.533Z [auth-service] INFO - Handled /api/v1/auth/login in 89ms status 200 from 10.5.242.149
+2026-11-21T10:00:02.548Z [inventory-db] INFO - Handled /api/v1/checkout in 110ms status 200 from 10.5.87.216
+{"timestamp":"2026-11-21T10:00:02.550Z","level":"INFO","service":"inventory-db","trace_id":"trace-dbbaba00a155","msg":"Handled /api/v1/cart/items in 88ms status=200 client_ip=10.1.243.165"}
+2026-11-21T10:00:02.560Z [api-gateway] INFO - Handled /api/v1/orders/create in 118ms status 200 from 10.4.159.164
+{"timestamp":"2026-11-21T10:00:02.565Z","level":"INFO","service":"redis-cache","trace_id":"trace-bd2a73746730","msg":"Handled /api/v1/orders/create in 43ms status=200 client_ip=10.3.124.63"}
+{"timestamp":"2026-11-21T10:00:02.577Z","level":"INFO","service":"payment-service","trace_id":"trace-78ea767c8ee4","msg":"Handled /api/v1/orders/create in 64ms status=200 client_ip=10.1.41.113"}
+2026-11-21T10:00:02.587Z [redis-cache] INFO - Handled /api/v1/cart/items in 98ms status 200 from 10.2.81.221
+{"timestamp":"2026-11-21T10:00:02.593Z","level":"INFO","service":"order-service","trace_id":"trace-f6035d048920","msg":"Handled /api/v1/health in 76ms status=200 client_ip=10.4.34.195"}
+{"timestamp":"2026-11-21T10:00:02.597Z","level":"INFO","service":"payment-service","trace_id":"trace-9b5b36f8163f","msg":"Handled /api/v1/auth/login in 23ms status=200 client_ip=10.4.32.69"}
+2026-11-21T10:00:02.602Z [payment-service] INFO - Handled /api/v1/auth/login in 115ms status 200 from 10.4.222.158
+2026-11-21T10:00:02.616Z [redis-cache] INFO - Handled /api/v1/cart/items in 29ms status 200 from 10.3.240.148
+{"timestamp":"2026-11-21T10:00:02.624Z","level":"INFO","service":"order-service","trace_id":"trace-c824cf89ac10","msg":"Handled /api/v1/orders/create in 7ms status=200 client_ip=10.5.120.128"}
+{"timestamp":"2026-11-21T10:00:02.631Z","level":"INFO","service":"auth-service","trace_id":"trace-be1e8b1b0070","msg":"Handled /api/v1/auth/login in 79ms status=200 client_ip=10.5.118.248"}
+2026-11-21T10:00:02.632Z [redis-cache] INFO - Handled /api/v1/orders/create in 41ms status 200 from 10.3.127.153
+{"timestamp":"2026-11-21T10:00:02.646Z","level":"INFO","service":"order-service","trace_id":"trace-b1a09c018316","msg":"Handled /api/v1/cart/items in 102ms status=200 client_ip=10.1.111.35"}
+2026-11-21T10:00:02.647Z [inventory-db] INFO - Handled /api/v1/auth/login in 51ms status 200 from 10.4.14.146
+2026-11-21T10:00:02.649Z [inventory-db] INFO - Handled /api/v1/cart/items in 110ms status 200 from 10.4.130.116
+2026-11-21T10:00:02.660Z [api-gateway] INFO - Handled /api/v1/orders/create in 52ms status 200 from 10.5.31.33
+2026-11-21T10:00:02.666Z [auth-service] INFO - Handled /api/v1/auth/login in 82ms status 200 from 10.5.241.94
+{"timestamp":"2026-11-21T10:00:02.675Z","level":"INFO","service":"auth-service","trace_id":"trace-ab56357544ce","msg":"Handled /api/v1/cart/items in 107ms status=200 client_ip=10.1.12.10"}
+2026-11-21T10:00:02.683Z [inventory-db] INFO - Handled /api/v1/auth/login in 46ms status 200 from 10.2.156.229
+{"timestamp":"2026-11-21T10:00:02.689Z","level":"INFO","service":"inventory-db","trace_id":"trace-0c28bff6e58a","msg":"Handled /api/v1/cart/items in 80ms status=200 client_ip=10.2.101.254"}
+{"timestamp":"2026-11-21T10:00:02.703Z","level":"INFO","service":"redis-cache","trace_id":"trace-ac85e007811d","msg":"Handled /api/v1/health in 43ms status=200 client_ip=10.5.137.126"}
+{"timestamp":"2026-11-21T10:00:02.704Z","level":"INFO","service":"api-gateway","trace_id":"trace-95abd7b41cfc","msg":"Handled /api/v1/orders/create in 79ms status=200 client_ip=10.3.85.173"}
+{"timestamp":"2026-11-21T10:00:02.719Z","level":"INFO","service":"order-service","trace_id":"trace-096434d21afd","msg":"Handled /api/v1/health in 78ms status=200 client_ip=10.1.153.122"}
+2026-11-21T10:00:02.720Z [inventory-db] INFO - Handled /api/v1/health in 104ms status 200 from 10.5.123.44
+{"timestamp":"2026-11-21T10:00:02.723Z","level":"INFO","service":"redis-cache","trace_id":"trace-261f35c36e72","msg":"Handled /api/v1/checkout in 29ms status=200 client_ip=10.2.9.147"}
+2026-11-21T10:00:02.729Z [redis-cache] INFO - Handled /api/v1/auth/login in 57ms status 200 from 10.4.39.106
+{"timestamp":"2026-11-21T10:00:02.739Z","level":"INFO","service":"redis-cache","trace_id":"trace-f256893b7443","msg":"Handled /api/v1/checkout in 95ms status=200 client_ip=10.4.224.218"}
+{"timestamp":"2026-11-21T10:00:02.743Z","level":"INFO","service":"payment-service","trace_id":"trace-7cc6fbebf432","msg":"Handled /api/v1/health in 53ms status=200 client_ip=10.5.84.170"}
+2026-11-21T10:00:02.746Z [order-service] INFO - Handled /api/v1/health in 50ms status 200 from 10.4.234.137
+2026-11-21T10:00:02.760Z [auth-service] INFO - Handled /api/v1/auth/login in 40ms status 200 from 10.3.157.124
+2026-11-21T10:00:02.764Z [redis-cache] INFO - Handled /api/v1/auth/login in 93ms status 200 from 10.3.198.74
+{"timestamp":"2026-11-21T10:00:02.770Z","level":"INFO","service":"redis-cache","trace_id":"trace-a12a0da9f4f6","msg":"Handled /api/v1/cart/items in 41ms status=200 client_ip=10.4.90.144"}
+2026-11-21T10:00:02.781Z [payment-service] INFO - Handled /api/v1/cart/items in 103ms status 200 from 10.5.98.230
+2026-11-21T10:00:02.786Z [redis-cache] INFO - Handled /api/v1/checkout in 49ms status 200 from 10.1.74.245
+2026-11-21T10:00:02.797Z [auth-service] INFO - Handled /api/v1/auth/login in 110ms status 200 from 10.3.192.123
+2026-11-21T10:00:02.812Z [auth-service] INFO - Handled /api/v1/checkout in 83ms status 200 from 10.5.179.70
+{"timestamp":"2026-11-21T10:00:02.816Z","level":"INFO","service":"inventory-db","trace_id":"trace-c062c56960bc","msg":"Handled /api/v1/auth/login in 86ms status=200 client_ip=10.2.13.172"}
+2026-11-21T10:00:02.818Z [payment-service] INFO - Handled /api/v1/checkout in 92ms status 200 from 10.4.85.184
+2026-11-21T10:00:02.819Z [auth-service] INFO - Handled /api/v1/orders/create in 88ms status 200 from 10.5.251.238
+{"timestamp":"2026-11-21T10:00:02.834Z","level":"INFO","service":"auth-service","trace_id":"trace-4c6ce51f12dc","msg":"Handled /api/v1/cart/items in 46ms status=200 client_ip=10.4.123.167"}
+2026-11-21T10:00:02.835Z [auth-service] INFO - Handled /api/v1/health in 99ms status 200 from 10.1.167.147
+2026-11-21T10:00:02.850Z [auth-service] INFO - Handled /api/v1/orders/create in 117ms status 200 from 10.1.234.236
+2026-11-21T10:00:02.865Z [payment-service] INFO - Handled /api/v1/auth/login in 100ms status 200 from 10.1.215.102
+2026-11-21T10:00:02.880Z [api-gateway] INFO - Handled /api/v1/cart/items in 77ms status 200 from 10.3.225.10
+{"timestamp":"2026-11-21T10:00:02.895Z","level":"INFO","service":"redis-cache","trace_id":"trace-7042f5c1341a","msg":"Handled /api/v1/health in 72ms status=200 client_ip=10.3.73.117"}
+{"timestamp":"2026-11-21T10:00:02.898Z","level":"INFO","service":"auth-service","trace_id":"trace-27a8fff47116","msg":"Handled /api/v1/checkout in 47ms status=200 client_ip=10.5.120.70"}
+{"timestamp":"2026-11-21T10:00:02.906Z","level":"INFO","service":"api-gateway","trace_id":"trace-15ce785e9d8d","msg":"Handled /api/v1/cart/items in 106ms status=200 client_ip=10.3.184.48"}
+{"timestamp":"2026-11-21T10:00:02.917Z","level":"INFO","service":"redis-cache","trace_id":"trace-8f6fb8d2a045","msg":"Handled /api/v1/orders/create in 110ms status=200 client_ip=10.2.45.157"}
+{"timestamp":"2026-11-21T10:00:02.923Z","level":"INFO","service":"api-gateway","trace_id":"trace-748ed3707912","msg":"Handled /api/v1/auth/login in 22ms status=200 client_ip=10.1.103.172"}
+2026-11-21T10:00:02.938Z [payment-service] INFO - Handled /api/v1/auth/login in 62ms status 200 from 10.2.2.67
+2026-11-21T10:00:02.944Z [inventory-db] INFO - Handled /api/v1/checkout in 38ms status 200 from 10.3.150.186
+{"timestamp":"2026-11-21T10:00:02.956Z","level":"INFO","service":"api-gateway","trace_id":"trace-2515d8f8beb1","msg":"Handled /api/v1/orders/create in 44ms status=200 client_ip=10.2.16.171"}
+{"timestamp":"2026-11-21T10:00:02.967Z","level":"INFO","service":"redis-cache","trace_id":"trace-106da44ce21f","msg":"Handled /api/v1/cart/items in 93ms status=200 client_ip=10.5.237.230"}
+{"timestamp":"2026-11-21T10:00:02.982Z","level":"INFO","service":"auth-service","trace_id":"trace-bc3d08513a0d","msg":"Handled /api/v1/auth/login in 22ms status=200 client_ip=10.3.95.158"}
+2026-11-21T10:00:02.990Z [redis-cache] INFO - Handled /api/v1/health in 65ms status 200 from 10.5.96.107
+2026-11-21T10:00:03.003Z [redis-cache] INFO - Handled /api/v1/health in 116ms status 200 from 10.2.196.64
+{"timestamp":"2026-11-21T10:00:03.012Z","level":"INFO","service":"order-service","trace_id":"trace-4fdceaa7c112","msg":"Handled /api/v1/checkout in 77ms status=200 client_ip=10.4.136.181"}
+{"timestamp":"2026-11-21T10:00:03.026Z","level":"INFO","service":"auth-service","trace_id":"trace-056c9d68ca5a","msg":"Handled /api/v1/health in 73ms status=200 client_ip=10.5.232.130"}
+2026-11-21T10:00:03.032Z [redis-cache] INFO - Handled /api/v1/auth/login in 96ms status 200 from 10.5.114.30
+2026-11-21T10:00:03.034Z [api-gateway] INFO - Handled /api/v1/orders/create in 21ms status 200 from 10.5.115.208
+{"timestamp":"2026-11-21T10:00:03.042Z","level":"INFO","service":"payment-service","trace_id":"trace-f602d593c366","msg":"Handled /api/v1/cart/items in 97ms status=200 client_ip=10.5.15.144"}
+{"timestamp":"2026-11-21T10:00:03.047Z","level":"INFO","service":"inventory-db","trace_id":"trace-0e94e61d6630","msg":"Handled /api/v1/checkout in 10ms status=200 client_ip=10.1.191.56"}
+{"timestamp":"2026-11-21T10:00:03.059Z","level":"INFO","service":"api-gateway","trace_id":"trace-1d32a6947c90","msg":"Handled /api/v1/orders/create in 9ms status=200 client_ip=10.1.139.16"}
+2026-11-21T10:00:03.062Z [redis-cache] INFO - Handled /api/v1/orders/create in 52ms status 200 from 10.2.197.165
+2026-11-21T10:00:03.069Z [payment-service] INFO - Handled /api/v1/orders/create in 15ms status 200 from 10.4.223.235
+2026-11-21T10:00:03.080Z [order-service] INFO - Handled /api/v1/checkout in 27ms status 200 from 10.5.35.168
+{"timestamp":"2026-11-21T10:00:03.087Z","level":"INFO","service":"auth-service","trace_id":"trace-2f99d08c2160","msg":"Handled /api/v1/checkout in 101ms status=200 client_ip=10.5.33.187"}
+{"timestamp":"2026-11-21T10:00:03.092Z","level":"INFO","service":"inventory-db","trace_id":"trace-3a5d8bc51839","msg":"Handled /api/v1/orders/create in 73ms status=200 client_ip=10.4.173.185"}
+2026-11-21T10:00:03.096Z [auth-service] INFO - Handled /api/v1/cart/items in 29ms status 200 from 10.2.118.89
+2026-11-21T10:00:03.108Z [redis-cache] INFO - Handled /api/v1/orders/create in 83ms status 200 from 10.1.9.208
+{"timestamp":"2026-11-21T10:00:03.123Z","level":"INFO","service":"api-gateway","trace_id":"trace-fdc3dbfcdfe9","msg":"Handled /api/v1/checkout in 81ms status=200 client_ip=10.1.62.53"}
+{"timestamp":"2026-11-21T10:00:03.133Z","level":"INFO","service":"api-gateway","trace_id":"trace-25b2e638ca22","msg":"Handled /api/v1/orders/create in 61ms status=200 client_ip=10.1.63.190"}
+2026-11-21T10:00:03.137Z [order-service] INFO - Handled /api/v1/auth/login in 109ms status 200 from 10.1.36.129
+{"timestamp":"2026-11-21T10:00:03.147Z","level":"INFO","service":"redis-cache","trace_id":"trace-3d109e2fe1d3","msg":"Handled /api/v1/cart/items in 35ms status=200 client_ip=10.3.148.154"}
+2026-11-21T10:00:03.150Z [order-service] INFO - Handled /api/v1/cart/items in 12ms status 200 from 10.5.57.106
+{"timestamp":"2026-11-21T10:00:03.160Z","level":"INFO","service":"payment-service","trace_id":"trace-67461597674f","msg":"Handled /api/v1/health in 68ms status=200 client_ip=10.2.161.174"}
+{"timestamp":"2026-11-21T10:00:03.166Z","level":"INFO","service":"order-service","trace_id":"trace-bc2828ea3821","msg":"Handled /api/v1/orders/create in 57ms status=200 client_ip=10.4.202.135"}
+{"timestamp":"2026-11-21T10:00:03.173Z","level":"INFO","service":"payment-service","trace_id":"trace-f29bf7ecd7e8","msg":"Handled /api/v1/auth/login in 113ms status=200 client_ip=10.2.194.138"}
+2026-11-21T10:00:03.187Z [api-gateway] INFO - Handled /api/v1/health in 57ms status 200 from 10.2.207.119
+{"timestamp":"2026-11-21T10:00:03.196Z","level":"INFO","service":"auth-service","trace_id":"trace-bcb3c5071f2f","msg":"Handled /api/v1/cart/items in 31ms status=200 client_ip=10.5.35.100"}
+2026-11-21T10:00:03.198Z [api-gateway] INFO - Handled /api/v1/health in 97ms status 200 from 10.4.217.95
+2026-11-21T10:00:03.199Z [inventory-db] INFO - Handled /api/v1/health in 10ms status 200 from 10.3.97.173
+{"timestamp":"2026-11-21T10:00:03.203Z","level":"INFO","service":"inventory-db","trace_id":"trace-0eccc977c07e","msg":"Handled /api/v1/auth/login in 66ms status=200 client_ip=10.5.186.172"}
+2026-11-21T10:00:03.218Z [api-gateway] INFO - Handled /api/v1/auth/login in 29ms status 200 from 10.3.78.245
+{"timestamp":"2026-11-21T10:00:03.220Z","level":"INFO","service":"redis-cache","trace_id":"trace-832c966b3d5d","msg":"Handled /api/v1/health in 95ms status=200 client_ip=10.4.235.63"}
+2026-11-21T10:00:03.235Z [order-service] INFO - Handled /api/v1/orders/create in 64ms status 200 from 10.2.142.83
+{"timestamp":"2026-11-21T10:00:03.241Z","level":"INFO","service":"inventory-db","trace_id":"trace-ce049e3e479e","msg":"Handled /api/v1/orders/create in 64ms status=200 client_ip=10.3.67.93"}
+{"timestamp":"2026-11-21T10:00:03.253Z","level":"INFO","service":"order-service","trace_id":"trace-6c9e6fba7f2c","msg":"Handled /api/v1/auth/login in 52ms status=200 client_ip=10.4.195.215"}
+{"timestamp":"2026-11-21T10:00:03.254Z","level":"INFO","service":"redis-cache","trace_id":"trace-7171701460fc","msg":"Handled /api/v1/auth/login in 7ms status=200 client_ip=10.5.222.57"}
+{"timestamp":"2026-11-21T10:00:03.269Z","level":"INFO","service":"payment-service","trace_id":"trace-96389ef3f9f7","msg":"Handled /api/v1/cart/items in 24ms status=200 client_ip=10.5.149.185"}
+2026-11-21T10:00:03.273Z [auth-service] INFO - Handled /api/v1/orders/create in 75ms status 200 from 10.4.146.214
+{"timestamp":"2026-11-21T10:00:03.284Z","level":"INFO","service":"payment-service","trace_id":"trace-c4376a358579","msg":"Handled /api/v1/orders/create in 63ms status=200 client_ip=10.3.66.196"}
+{"timestamp":"2026-11-21T10:00:03.297Z","level":"INFO","service":"redis-cache","trace_id":"trace-ce712c7c676d","msg":"Handled /api/v1/health in 67ms status=200 client_ip=10.3.44.36"}
+2026-11-21T10:00:03.312Z [api-gateway] INFO - Handled /api/v1/health in 9ms status 200 from 10.5.254.165
+2026-11-21T10:00:03.314Z [payment-service] INFO - Handled /api/v1/auth/login in 112ms status 200 from 10.1.196.2
+{"timestamp":"2026-11-21T10:00:03.316Z","level":"INFO","service":"inventory-db","trace_id":"trace-97d664004d17","msg":"Handled /api/v1/orders/create in 52ms status=200 client_ip=10.2.3.56"}
+{"timestamp":"2026-11-21T10:00:03.327Z","level":"INFO","service":"redis-cache","trace_id":"trace-6607540018e1","msg":"Handled /api/v1/orders/create in 7ms status=200 client_ip=10.5.234.124"}
+2026-11-21T10:00:03.336Z [inventory-db] INFO - Handled /api/v1/cart/items in 73ms status 200 from 10.4.4.5
+2026-11-21T10:00:03.337Z [redis-cache] INFO - Handled /api/v1/orders/create in 108ms status 200 from 10.5.209.179
+{"timestamp":"2026-11-21T10:00:03.340Z","level":"INFO","service":"inventory-db","trace_id":"trace-05b4e711b841","msg":"Handled /api/v1/auth/login in 35ms status=200 client_ip=10.1.236.25"}
+{"timestamp":"2026-11-21T10:00:03.349Z","level":"INFO","service":"order-service","trace_id":"trace-1b55821a76bd","msg":"Handled /api/v1/orders/create in 15ms status=200 client_ip=10.3.209.91"}
+2026-11-21T10:00:03.356Z [redis-cache] INFO - Handled /api/v1/auth/login in 43ms status 200 from 10.4.145.63
+{"timestamp":"2026-11-21T10:00:03.370Z","level":"INFO","service":"redis-cache","trace_id":"trace-2047249418cb","msg":"Handled /api/v1/checkout in 16ms status=200 client_ip=10.1.168.254"}
+{"timestamp":"2026-11-21T10:00:03.377Z","level":"INFO","service":"redis-cache","trace_id":"trace-21e45d175e9e","msg":"Handled /api/v1/checkout in 94ms status=200 client_ip=10.5.122.15"}
+2026-11-21T10:00:03.385Z [order-service] INFO - Handled /api/v1/health in 114ms status 200 from 10.4.166.201
+2026-11-21T10:00:03.400Z [auth-service] INFO - Handled /api/v1/auth/login in 120ms status 200 from 10.5.236.11
+2026-11-21T10:00:03.415Z [api-gateway] INFO - Handled /api/v1/checkout in 92ms status 200 from 10.5.122.70
+{"timestamp":"2026-11-21T10:00:03.430Z","level":"INFO","service":"api-gateway","trace_id":"trace-b51f1c278aba","msg":"Handled /api/v1/auth/login in 113ms status=200 client_ip=10.5.145.169"}
+{"timestamp":"2026-11-21T10:00:03.434Z","level":"INFO","service":"redis-cache","trace_id":"trace-3c6ec8c325dd","msg":"Handled /api/v1/orders/create in 14ms status=200 client_ip=10.5.37.193"}
+{"timestamp":"2026-11-21T10:00:03.444Z","level":"INFO","service":"payment-service","trace_id":"trace-075e8f0f9160","msg":"Handled /api/v1/health in 47ms status=200 client_ip=10.2.146.214"}
+2026-11-21T10:00:03.456Z [redis-cache] INFO - Handled /api/v1/checkout in 69ms status 200 from 10.2.203.254
+2026-11-21T10:00:03.462Z [auth-service] INFO - Handled /api/v1/checkout in 48ms status 200 from 10.1.26.112
+{"timestamp":"2026-11-21T10:00:03.472Z","level":"INFO","service":"order-service","trace_id":"trace-33da7657b341","msg":"Handled /api/v1/checkout in 86ms status=200 client_ip=10.5.102.249"}
+{"timestamp":"2026-11-21T10:00:03.480Z","level":"INFO","service":"inventory-db","trace_id":"trace-0a7203163f2e","msg":"Handled /api/v1/orders/create in 60ms status=200 client_ip=10.4.59.92"}
+{"timestamp":"2026-11-21T10:00:03.490Z","level":"INFO","service":"inventory-db","trace_id":"trace-5a979e000266","msg":"Handled /api/v1/cart/items in 107ms status=200 client_ip=10.4.22.198"}
+{"timestamp":"2026-11-21T10:00:03.492Z","level":"INFO","service":"payment-service","trace_id":"trace-bd788a8ce6ce","msg":"Handled /api/v1/auth/login in 99ms status=200 client_ip=10.1.69.40"}
+2026-11-21T10:00:03.498Z [order-service] INFO - Handled /api/v1/orders/create in 51ms status 200 from 10.1.24.2
+2026-11-21T10:00:03.500Z [payment-service] INFO - Handled /api/v1/orders/create in 76ms status 200 from 10.2.23.48
+2026-11-21T10:00:03.507Z [order-service] INFO - Handled /api/v1/health in 16ms status 200 from 10.1.7.23
+{"timestamp":"2026-11-21T10:00:03.520Z","level":"INFO","service":"api-gateway","trace_id":"trace-7f7d0e46438a","msg":"Handled /api/v1/cart/items in 57ms status=200 client_ip=10.3.222.99"}
+{"timestamp":"2026-11-21T10:00:03.522Z","level":"INFO","service":"auth-service","trace_id":"trace-f6dbbb54fd93","msg":"Handled /api/v1/health in 71ms status=200 client_ip=10.5.232.251"}
+{"timestamp":"2026-11-21T10:00:03.529Z","level":"INFO","service":"order-service","trace_id":"trace-0124ff669d27","msg":"Handled /api/v1/cart/items in 68ms status=200 client_ip=10.2.36.69"}
+{"timestamp":"2026-11-21T10:00:03.532Z","level":"INFO","service":"order-service","trace_id":"trace-e8b41442431a","msg":"Handled /api/v1/orders/create in 105ms status=200 client_ip=10.4.71.108"}
+{"timestamp":"2026-11-21T10:00:03.537Z","level":"INFO","service":"payment-service","trace_id":"trace-373ca2129e18","msg":"Handled /api/v1/health in 83ms status=200 client_ip=10.2.185.161"}
+2026-11-21T10:00:03.539Z [payment-service] INFO - Handled /api/v1/cart/items in 112ms status 200 from 10.2.78.2
+{"timestamp":"2026-11-21T10:00:03.552Z","level":"INFO","service":"payment-service","trace_id":"trace-2361fd58f2b7","msg":"Handled /api/v1/health in 22ms status=200 client_ip=10.3.113.86"}
+{"timestamp":"2026-11-21T10:00:03.562Z","level":"INFO","service":"auth-service","trace_id":"trace-3cbb26356a8a","msg":"Handled /api/v1/orders/create in 45ms status=200 client_ip=10.2.123.81"}
+{"timestamp":"2026-11-21T10:00:03.574Z","level":"INFO","service":"auth-service","trace_id":"trace-520c59c5eb30","msg":"Handled /api/v1/cart/items in 53ms status=200 client_ip=10.4.248.148"}
+2026-11-21T10:00:03.587Z [inventory-db] INFO - Handled /api/v1/auth/login in 80ms status 200 from 10.4.94.30
+{"timestamp":"2026-11-21T10:00:03.590Z","level":"INFO","service":"redis-cache","trace_id":"trace-85bbffd7d87d","msg":"Handled /api/v1/orders/create in 95ms status=200 client_ip=10.5.7.244"}
+{"timestamp":"2026-11-21T10:00:03.603Z","level":"INFO","service":"api-gateway","trace_id":"trace-4aea6b3af1b8","msg":"Handled /api/v1/orders/create in 91ms status=200 client_ip=10.3.213.178"}
+{"timestamp":"2026-11-21T10:00:03.614Z","level":"INFO","service":"redis-cache","trace_id":"trace-a7cbc1047636","msg":"Handled /api/v1/auth/login in 96ms status=200 client_ip=10.3.62.65"}
+{"timestamp":"2026-11-21T10:00:03.621Z","level":"INFO","service":"inventory-db","trace_id":"trace-f8e4c4250676","msg":"Handled /api/v1/orders/create in 79ms status=200 client_ip=10.1.115.254"}
+2026-11-21T10:00:03.630Z [order-service] INFO - Handled /api/v1/health in 81ms status 200 from 10.4.140.10
+2026-11-21T10:00:03.632Z [redis-cache] INFO - Handled /api/v1/cart/items in 26ms status 200 from 10.1.197.64
+{"timestamp":"2026-11-21T10:00:03.633Z","level":"INFO","service":"redis-cache","trace_id":"trace-365a40e552d8","msg":"Handled /api/v1/orders/create in 101ms status=200 client_ip=10.5.252.166"}
+2026-11-21T10:00:03.646Z [api-gateway] INFO - Handled /api/v1/cart/items in 33ms status 200 from 10.4.28.3
+{"timestamp":"2026-11-21T10:00:03.655Z","level":"INFO","service":"inventory-db","trace_id":"trace-28bcdac7f5e1","msg":"Handled /api/v1/auth/login in 62ms status=200 client_ip=10.5.149.177"}
+{"timestamp":"2026-11-21T10:00:03.663Z","level":"INFO","service":"auth-service","trace_id":"trace-c30b5e02cf5c","msg":"Handled /api/v1/cart/items in 8ms status=200 client_ip=10.5.177.129"}
+2026-11-21T10:00:03.668Z [api-gateway] INFO - Handled /api/v1/checkout in 111ms status 200 from 10.4.236.247
+{"timestamp":"2026-11-21T10:00:03.671Z","level":"INFO","service":"payment-service","trace_id":"trace-2785d2dfd67c","msg":"Handled /api/v1/auth/login in 71ms status=200 client_ip=10.3.80.88"}
+{"timestamp":"2026-11-21T10:00:03.679Z","level":"INFO","service":"redis-cache","trace_id":"trace-40d511bfbda7","msg":"Handled /api/v1/orders/create in 45ms status=200 client_ip=10.1.113.185"}
+2026-11-21T10:00:03.680Z [order-service] INFO - Handled /api/v1/checkout in 91ms status 200 from 10.1.6.218
+2026-11-21T10:00:03.695Z [inventory-db] INFO - Handled /api/v1/auth/login in 47ms status 200 from 10.2.133.45
+2026-11-21T10:00:03.703Z [redis-cache] INFO - Handled /api/v1/auth/login in 28ms status 200 from 10.2.205.104
+2026-11-21T10:00:03.710Z [inventory-db] INFO - Handled /api/v1/auth/login in 62ms status 200 from 10.4.8.189
+2026-11-21T10:00:03.717Z [auth-service] INFO - Handled /api/v1/cart/items in 101ms status 200 from 10.1.181.55
+{"timestamp":"2026-11-21T10:00:03.730Z","level":"INFO","service":"inventory-db","trace_id":"trace-72493465d652","msg":"Handled /api/v1/auth/login in 51ms status=200 client_ip=10.1.148.27"}
+{"timestamp":"2026-11-21T10:00:03.738Z","level":"INFO","service":"payment-service","trace_id":"trace-99732f4ee943","msg":"Handled /api/v1/health in 86ms status=200 client_ip=10.1.68.172"}
+2026-11-21T10:00:03.745Z [api-gateway] INFO - Handled /api/v1/cart/items in 50ms status 200 from 10.5.101.151
+2026-11-21T10:00:03.755Z [redis-cache] INFO - Handled /api/v1/cart/items in 83ms status 200 from 10.2.209.173
+{"timestamp":"2026-11-21T10:00:03.766Z","level":"INFO","service":"auth-service","trace_id":"trace-7eda786e1f09","msg":"Handled /api/v1/cart/items in 19ms status=200 client_ip=10.2.81.31"}
+2026-11-21T10:00:03.778Z [payment-service] INFO - Handled /api/v1/health in 22ms status 200 from 10.2.131.100
+{"timestamp":"2026-11-21T10:00:03.785Z","level":"INFO","service":"inventory-db","trace_id":"trace-a1c5e7559911","msg":"Handled /api/v1/auth/login in 76ms status=200 client_ip=10.2.125.163"}
+2026-11-21T10:00:03.790Z [payment-service] INFO - Handled /api/v1/health in 11ms status 200 from 10.2.48.81
+2026-11-21T10:00:03.791Z [payment-service] INFO - Handled /api/v1/health in 69ms status 200 from 10.4.35.50
+{"timestamp":"2026-11-21T10:00:03.798Z","level":"INFO","service":"payment-service","trace_id":"trace-65d67c5d4d79","msg":"Handled /api/v1/orders/create in 26ms status=200 client_ip=10.4.107.182"}
+{"timestamp":"2026-11-21T10:00:03.799Z","level":"INFO","service":"order-service","trace_id":"trace-09952c47976f","msg":"Handled /api/v1/auth/login in 73ms status=200 client_ip=10.2.75.9"}
+{"timestamp":"2026-11-21T10:00:03.812Z","level":"INFO","service":"payment-service","trace_id":"trace-3afa752bf478","msg":"Handled /api/v1/health in 70ms status=200 client_ip=10.4.145.191"}
+2026-11-21T10:00:03.814Z [order-service] INFO - Handled /api/v1/health in 110ms status 200 from 10.3.199.140
+2026-11-21T10:00:03.827Z [payment-service] INFO - Handled /api/v1/checkout in 99ms status 200 from 10.4.140.56
+{"timestamp":"2026-11-21T10:00:03.840Z","level":"INFO","service":"api-gateway","trace_id":"trace-5db6a0e1fcd7","msg":"Handled /api/v1/orders/create in 38ms status=200 client_ip=10.2.77.224"}
+2026-11-21T10:00:03.854Z [api-gateway] INFO - Handled /api/v1/auth/login in 31ms status 200 from 10.1.113.222
+2026-11-21T10:00:03.864Z [inventory-db] INFO - Handled /api/v1/orders/create in 26ms status 200 from 10.3.221.182
+2026-11-21T10:00:03.877Z [api-gateway] INFO - Handled /api/v1/health in 49ms status 200 from 10.2.209.53
+2026-11-21T10:00:03.887Z [redis-cache] INFO - Handled /api/v1/cart/items in 42ms status 200 from 10.5.44.83
+2026-11-21T10:00:03.901Z [redis-cache] INFO - Handled /api/v1/checkout in 22ms status 200 from 10.5.253.231
+2026-11-21T10:00:03.914Z [order-service] INFO - Handled /api/v1/auth/login in 94ms status 200 from 10.4.236.16
+{"timestamp":"2026-11-21T10:00:03.918Z","level":"INFO","service":"auth-service","trace_id":"trace-32898ef7162a","msg":"Handled /api/v1/orders/create in 67ms status=200 client_ip=10.2.183.83"}
+2026-11-21T10:00:03.929Z [payment-service] INFO - Handled /api/v1/orders/create in 14ms status 200 from 10.3.161.107
+2026-11-21T10:00:03.944Z [redis-cache] INFO - Handled /api/v1/cart/items in 93ms status 200 from 10.1.104.132
+2026-11-21T10:00:03.950Z [order-service] INFO - Handled /api/v1/health in 5ms status 200 from 10.4.244.125

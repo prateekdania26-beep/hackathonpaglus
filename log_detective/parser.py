@@ -1,372 +1,287 @@
-"""Streaming multi-format log reader and parser with multi-line stack trace stitching."""
+"""Streaming parser for JSON-lines and common timestamped text logs."""
 
 from __future__ import annotations
-import io
-import os
+
+import json
 import re
+import csv
+import shlex
 from datetime import datetime
-from typing import Iterator, Optional, Tuple, Dict, Any, List
-import orjson
-from .models import LogEvent, LogSeverity
+from pathlib import Path
+from typing import Iterator, Optional, Sequence
 
-# High-efficiency regexes for level detection
-RE_LEVEL_EXTRACT = re.compile(
-    r'\b(DEBUG|INFO|NOTICE|WARN(?:ING)?|ERR(?:OR)?|FATAL|CRIT(?:ICAL)?|PANIC|EMERG(?:ENCY)?|ALERT|SEVERE)\b',
-    re.IGNORECASE
-)
+from .models import LogEvent
 
-# Heuristic error indicators for logs without explicit level tags
-RE_ERROR_HEURISTICS = re.compile(
-    r'\b(?:[a-zA-Z0-9_\.]*(?:Exception|Error|Panic|Fault|Failure)|failed|failure|fatal|panic|segfault|sigkill|sigsegv|denied|timeout|timed out|refused|crash|deadlock|unhandled|broken pipe|connection reset)\b|"(?:GET|POST|PUT|DELETE|PATCH|HEAD|OPTIONS)\s+[^"]+"\s+5\d{2}\b|status[=:\s]+5\d{2}|"status":\s*5\d{2}|\b5\d{2}\s+\d+\b',
-    re.IGNORECASE
+LEVELS = {"TRACE", "DEBUG", "INFO", "WARN", "WARNING", "ERROR", "FATAL", "CRITICAL"}
+ISO_PREFIX = re.compile(
+    r"^(?P<time>\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2}(?:[.,]\d+)?(?:Z|[+-]\d{2}:?\d{2})?)\s+(?P<rest>.*)$"
 )
-RE_WARN_HEURISTICS = re.compile(
-    r'\b(warn|warning|degraded|slow query|retry|retrying|backpressure|deprecated)\b|"(?:GET|POST|PUT|DELETE|PATCH|HEAD|OPTIONS)\s+[^"]+"\s+4\d{2}\b|status[=:\s]+4\d{2}',
-    re.IGNORECASE
-)
-
-# Timestamp regex patterns
-RE_ISO_TIMESTAMP = re.compile(
-    r'(\d{4}[-/]\d{2}[-/]\d{2}[T ]\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:?\d{2})?)'
-)
-RE_APACHE_TIMESTAMP = re.compile(
-    r'\[(\d{2}/[A-Z][a-z]{2}/\d{4}:\d{2}:\d{2}:\d{2}(?:\s+[+-]\d{4})?)\]'
-)
-RE_SYSLOG_TIMESTAMP = re.compile(
-    r'([A-Z][a-z]{2}\s+\d{1,2}\s+\d{2}:\d{2}:\d{2})'
-)
-RE_BRACKET_TIMESTAMP = re.compile(
-    r'\[(\d{4}[-/]\d{2}[-/]\d{2}[ T]\d{2}:\d{2}:\d{2}(?:\.\d+)?)\]'
-)
-RE_TIME_ONLY = re.compile(
-    r'\b(\d{2}:\d{2}:\d{2}(?:\.\d+)?)\b'
-)
-
-# Stack trace indicators
-STACK_START_KEYWORDS = (
-    "traceback (most recent call last):",
-    "panic:",
-    "fatal error:",
-    "exception in thread",
-    "caused by:",
-    "goroutine ",
-    "unhandled exception:",
-    "runtime.gopanic",
-    "stack backtrace:"
-)
-
-STACK_CONTINUATION_PATTERNS = (
-    re.compile(r'^\s+at\s+[\w\.\$/<>]+\('),           # Java/C#/Node "   at com.example..."
-    re.compile(r'^\s+File\s+"[^"]+",\s+line\s+\d+'),    # Python '  File "...", line 12'
-    re.compile(r'^\s+[a-zA-Z0-9_\.\-/]+\.go:\d+'),      # Go '   /path/main.go:42'
-    re.compile(r'^\s+\.\.\.\s+\d+\s+more'),             # Java '... 15 more'
-    re.compile(r'^(?:Caused by:|[a-zA-Z0-9_\.]+(?:Exception|Error):)'), # Java caused by / chained
-    re.compile(r'^\s*[\}\]\)]\s*$'),                    # JSON trailing block
-)
+BRACKETED = re.compile(r"^\[(?P<service>[^\]]+)\]\s+(?P<rest>.*)$")
+LEVEL_PREFIX = re.compile(r"^(?P<level>TRACE|DEBUG|INFO|WARN|WARNING|ERROR|FATAL|CRITICAL)\b\s*(?:[-:]\s*)?(?P<message>.*)$", re.I)
+NGINX_ACCESS = re.compile(r'^\S+\s+\S+\s+\S+\s+\[(?P<time>[^\]]+)\]\s+"(?P<method>[A-Z]+)\s+(?P<path>\S+)(?:\s+[^\"]*)?"\s+(?P<status>\d{3})\b')
+SYSLOG = re.compile(r"^(?P<time>[A-Z][a-z]{2}\s+\d{1,2}\s+\d{2}:\d{2}:\d{2})\s+(?P<host>\S+)\s+(?P<service>[\w./-]+)(?:\[\d+\])?:\s*(?P<rest>.*)$")
+SYSLOG_TEXT = re.compile(r"^(?P<time>[A-Z][a-z]{2}\s+\d{1,2}\s+\d{2}:\d{2}:\d{2})\s+(?P<rest>.*)$")
+DAY_MONTH_TEXT = re.compile(r"^(?P<time>\d{1,2}/[A-Z][a-z]{2}/\d{4}:\d{2}:\d{2}:\d{2}\s+[+-]\d{4})\s+(?P<rest>.*)$")
+EXCEPTION_START = re.compile(r"^(?:[\w.$]+(?:Exception|Error|Failure|Panic|Fault)\b|Traceback \(most recent call last\):|panic:|fatal error:)", re.I)
 
 
-def parse_timestamp_to_epoch(ts_str: str) -> Optional[float]:
-    """Parse common timestamp string formats to UTC epoch seconds."""
-    if not ts_str:
+def parse_timestamp(value: object) -> Optional[datetime]:
+    if not isinstance(value, str) or not value.strip():
         return None
-    
-    clean_ts = ts_str.replace("T", " ").rstrip("Z")
-    if "." in clean_ts:
-        parts = clean_ts.split(".")
-        sub = parts[1]
-        sub = re.split(r'[\+\- ]', sub)[0]
-        sub = (sub + "000000")[:6]
-        clean_ts = f"{parts[0]}.{sub}"
-        fmt = "%Y-%m-%d %H:%M:%S.%f"
+    candidate = value.strip()
+    if candidate.endswith("Z"):
+        candidate = candidate[:-1] + "+00:00"
+    try:
+        return datetime.fromisoformat(candidate)
+    except ValueError:
+        return None
+
+
+def _from_json(line: str, source: str, number: int) -> Optional[LogEvent]:
+    try:
+        item = json.loads(line)
+    except (json.JSONDecodeError, TypeError):
+        return None
+    if not isinstance(item, dict):
+        return None
+    message = item.get("message", item.get("msg", item.get("event", "")))
+    if message is None or str(message) == "":
+        return None
+    severity = str(item.get("level", item.get("severity", "INFO"))).upper()
+    stamp = item.get("timestamp", item.get("time", item.get("ts")))
+    service = item.get("service", item.get("component", "unknown"))
+    trace = item.get("trace_id", item.get("request_id", item.get("correlation_id", "")))
+    event = LogEvent(source, number, parse_timestamp(stamp), severity, str(message), str(service), str(trace or ""))
+    stack = item.get("stack", item.get("stack_trace", ""))
+    if stack:
+        event.stack.extend(str(stack).splitlines())
+    return event
+
+
+def _from_text(line: str, source: str, number: int) -> Optional[LogEvent]:
+    match = ISO_PREFIX.match(line)
+    if not match:
+        return None
+    timestamp = parse_timestamp(match.group("time"))
+    rest = match.group("rest").strip()
+    service = "unknown"
+    level_match = LEVEL_PREFIX.match(rest)
+    if level_match:
+        severity = level_match.group("level").upper()
+        message = level_match.group("message").strip()
     else:
-        fmt = "%Y-%m-%d %H:%M:%S"
-
-    try:
-        dt = datetime.strptime(clean_ts[:26], fmt)
-        return dt.timestamp()
-    except Exception:
-        pass
-
-    # Try Apache format: 01/Mar/2026:14:00:00
-    try:
-        ts_part = ts_str.split()[0]
-        dt = datetime.strptime(ts_part, "%d/%b/%Y:%H:%M:%S")
-        return dt.timestamp()
-    except Exception:
-        pass
-
-    return None
+        severity = "INFO"
+        message = rest
+    bracketed = BRACKETED.match(message)
+    if bracketed:
+        service = bracketed.group("service").strip()
+        message = bracketed.group("rest").strip()
+    return LogEvent(source, number, timestamp, severity, message, service)
 
 
-def is_stack_trace_line(line: str, in_stack: bool = False) -> bool:
-    """Detect if a raw line is part of a multi-line stack trace or unhandled error trace."""
-    stripped = line.strip()
-    if not stripped:
-        return in_stack
-    
-    lower = stripped.lower()
-    for kw in STACK_START_KEYWORDS:
-        if lower.startswith(kw):
-            return True
-
-    if in_stack:
-        if line.startswith((" ", "\t")):
-            return True
-        if any(lower.startswith(kw) for kw in ("caused by:", "reason:", "error:", "exception:")):
-            return True
-        if re.match(r'^[a-zA-Z0-9_\.]+(?:Exception|Error|Fault|Failure|Warning|Panic):', stripped):
-            return True
-
-    # Indented lines (2+ spaces or tab) are classic stack trace body
-    if line.startswith(("    ", "\t", "  ")):
-        for pat in STACK_CONTINUATION_PATTERNS:
-            if pat.search(line):
-                return True
-        if any(term in stripped for term in (", in ", "at ", "line ")):
-            return True
-
-    for pat in STACK_CONTINUATION_PATTERNS:
-        if pat.search(stripped):
-            return True
-
-    return False
-
-
-def parse_json_log_line(line_str: str, line_no: int, offset: int) -> Optional[LogEvent]:
-    """Attempt fast JSON parse using orjson."""
-    if not (line_str.startswith("{") and line_str.endswith("}")):
+def _from_nginx(line: str, source: str, number: int) -> Optional[LogEvent]:
+    match = NGINX_ACCESS.match(line)
+    if not match:
         return None
-
     try:
-        data = orjson.loads(line_str)
-        if not isinstance(data, dict):
+        stamp = datetime.strptime(match.group("time"), "%d/%b/%Y:%H:%M:%S %z")
+    except ValueError:
+        stamp = None
+    status = int(match.group("status"))
+    severity = "ERROR" if status >= 500 else "WARN" if status >= 400 else "INFO"
+    message = f"HTTP {match.group('method')} {match.group('path')} returned {status}"
+    return LogEvent(source, number, stamp, severity, message, "nginx")
+
+
+def _from_syslog(line: str, source: str, number: int) -> Optional[LogEvent]:
+    match = SYSLOG.match(line)
+    if not match:
+        return None
+    try:
+        stamp = datetime.strptime(match.group("time"), "%b %d %H:%M:%S").replace(year=datetime.now().year)
+    except ValueError:
+        stamp = None
+    rest = match.group("rest").strip()
+    level_match = LEVEL_PREFIX.match(rest)
+    if level_match:
+        severity, message = level_match.group("level").upper(), level_match.group("message").strip()
+    else:
+        severity, message = "INFO", rest
+    return LogEvent(source, number, stamp, severity, message, match.group("service"))
+
+
+def _from_date_text(line: str, source: str, number: int) -> Optional[LogEvent]:
+    match = DAY_MONTH_TEXT.match(line)
+    if match:
+        try:
+            stamp = datetime.strptime(match.group("time"), "%d/%b/%Y:%H:%M:%S %z")
+        except ValueError:
+            stamp = None
+        rest = match.group("rest").strip()
+    else:
+        match = SYSLOG_TEXT.match(line)
+        if not match:
             return None
-    except Exception:
+        try:
+            stamp = datetime.strptime(match.group("time"), "%b %d %H:%M:%S").replace(year=datetime.now().year)
+        except ValueError:
+            stamp = None
+        rest = match.group("rest").strip()
+    service = "unknown"
+    bracketed = BRACKETED.match(rest)
+    if bracketed:
+        service = bracketed.group("service").strip()
+        rest = bracketed.group("rest").strip()
+    level_match = LEVEL_PREFIX.match(rest)
+    if level_match:
+        severity, message = level_match.group("level").upper(), level_match.group("message").strip()
+    else:
+        severity, message = "INFO", rest
+    return LogEvent(source, number, stamp, severity, message, service)
+
+
+def _from_logfmt(line: str, source: str, number: int) -> Optional[LogEvent]:
+    if not re.match(r"^[A-Za-z_][\w.-]*=", line):
         return None
+    try:
+        parts = shlex.split(line, posix=True)
+    except ValueError:
+        return None
+    fields = {}
+    for part in parts:
+        if "=" in part:
+            key, value = part.split("=", 1)
+            fields[key.lower()] = value
+    message = fields.get("msg", fields.get("message", fields.get("event", "")))
+    if not message:
+        return None
+    timestamp = parse_timestamp(fields.get("ts", fields.get("time", fields.get("timestamp"))))
+    severity = fields.get("level", fields.get("severity", "INFO")).upper()
+    service = fields.get("svc", fields.get("service", "unknown"))
+    event = LogEvent(source, number, timestamp, severity, message, service,
+                     fields.get("trace_id", fields.get("request_id", "")))
+    if fields.get("stack"):
+        event.stack.extend(fields["stack"].splitlines())
+    return event
 
-    # Extract timestamp
-    ts_raw = None
-    for k in ("time", "timestamp", "@timestamp", "ts", "datetime", "date"):
-        if k in data and data[k]:
-            ts_raw = str(data[k])
-            break
 
-    # Extract level
-    lvl_val = "INFO"
-    for k in ("level", "severity", "log_level", "lvl"):
-        if k in data and data[k]:
-            lvl_val = str(data[k])
-            break
+def _parse_header(line: str, source: str, number: int) -> Optional[LogEvent]:
+    return (_from_json(line, source, number) or _from_nginx(line, source, number)
+            or _from_syslog(line, source, number) or _from_logfmt(line, source, number)
+            or _from_date_text(line, source, number)
+            or _from_text(line, source, number))
 
-    # Extract message
-    msg = ""
-    for k in ("msg", "message", "error", "err", "log", "text", "description"):
-        if k in data and data[k]:
-            msg = str(data[k])
-            break
-    if not msg:
-        msg = line_str
 
-    # Extract component / service
-    comp = None
-    for k in ("service", "app", "logger", "caller", "component", "thread", "name"):
-        if k in data and data[k]:
-            comp = str(data[k])
-            break
-
-    # Extract trace / request ID
-    trace_id = None
-    for k in ("trace_id", "traceId", "request_id", "requestId", "req_id", "correlation_id", "span_id"):
-        if k in data and data[k]:
-            trace_id = str(data[k])
-            break
-
-    # Extract stack trace if explicitly in JSON
-    stack_trace = None
-    for k in ("stack", "stack_trace", "stacktrace", "traceback", "exception"):
-        if k in data and data[k]:
-            stack_val = data[k]
-            stack_trace = stack_val if isinstance(stack_val, str) else str(stack_val)
-            break
-
-    epoch = parse_timestamp_to_epoch(ts_raw) if ts_raw else None
-    level = LogSeverity.from_str(lvl_val)
-
-    # Status code heuristics in JSON
-    for k in ("status", "statusCode", "status_code", "http_status"):
-        if k in data and data[k]:
+def _csv_payload_items(raw: str, source: str, start_line: int):
+    """Split a CSV cell containing one or several mixed log records."""
+    lines = raw.splitlines()
+    index = 0
+    decoder = json.JSONDecoder()
+    while index < len(lines):
+        line = lines[index]
+        if line.lstrip().startswith("{"):
+            tail = "\n".join(lines[index:])
+            leading = len(tail) - len(tail.lstrip())
             try:
-                code = int(data[k])
-                if code >= 500 and not level.is_error_or_higher:
-                    level = LogSeverity.ERROR
-                elif code >= 400 and level == LogSeverity.UNKNOWN:
-                    level = LogSeverity.WARN
-            except Exception:
-                pass
-
-    if "error" in data and data["error"] and not level.is_error_or_higher:
-        level = LogSeverity.ERROR
-
-    # Check text heuristics
-    if level == LogSeverity.INFO or level == LogSeverity.UNKNOWN:
-        if RE_ERROR_HEURISTICS.search(msg):
-            level = LogSeverity.ERROR
-        elif RE_WARN_HEURISTICS.search(msg):
-            level = LogSeverity.WARN
-
-    return LogEvent(
-        line_number=line_no,
-        byte_offset=offset,
-        timestamp_raw=ts_raw,
-        timestamp_epoch=epoch,
-        level=level,
-        component=comp,
-        trace_id=trace_id,
-        raw_message=line_str,
-        clean_message=msg,
-        stack_trace=stack_trace,
-        metadata={"format": "json"}
-    )
-
-
-def parse_plaintext_log_line(line_str: str, line_no: int, offset: int) -> LogEvent:
-    """Parse unstructured plain-text, syslog, Apache, or bracketed log format."""
-    ts_raw = None
-    epoch = None
-    level = LogSeverity.UNKNOWN
-    clean_msg = line_str
-    comp = None
-
-    # 1. Search for timestamps
-    m_ts = (
-        RE_ISO_TIMESTAMP.search(line_str)
-        or RE_BRACKET_TIMESTAMP.search(line_str)
-        or RE_APACHE_TIMESTAMP.search(line_str)
-        or RE_SYSLOG_TIMESTAMP.search(line_str)
-        or RE_TIME_ONLY.search(line_str)
-    )
-    if m_ts:
-        ts_raw = m_ts.group(1)
-        epoch = parse_timestamp_to_epoch(ts_raw)
-
-    # 2. Search for explicit log level
-    m_lvl = RE_LEVEL_EXTRACT.search(line_str)
-    if m_lvl:
-        level = LogSeverity.from_str(m_lvl.group(1))
-
-    # 3. Clean message
-    clean_msg = line_str
-    if ts_raw and ts_raw in clean_msg:
-        idx = clean_msg.find(ts_raw) + len(ts_raw)
-        clean_msg = clean_msg[idx:].lstrip(" :]>-")
-
-    if m_lvl:
-        lvl_token = m_lvl.group(1)
-        clean_msg = clean_msg.replace(f"[{lvl_token}]", "").replace(f"<{lvl_token}>", "")
-        if clean_msg.startswith(lvl_token):
-            clean_msg = clean_msg[len(lvl_token):].lstrip(" :]>-")
-
-    # 4. Extract component e.g. [worker-1] or [billing-service]
-    m_bracket = re.search(r'\[([a-zA-Z0-9_\.\-]+)\]', clean_msg)
-    if m_bracket:
-        comp = m_bracket.group(1)
-        clean_msg = clean_msg.replace(m_bracket.group(0), "").strip()
-
-    # 5. Heuristic error inference if level wasn't explicitly stated
-    if level == LogSeverity.UNKNOWN or level == LogSeverity.INFO:
-        if RE_ERROR_HEURISTICS.search(line_str):
-            level = LogSeverity.ERROR
-        elif RE_WARN_HEURISTICS.search(line_str):
-            level = LogSeverity.WARN
-
-    # Check for panic / fatal keywords
-    if any(k in line_str.lower() for k in ("panic:", "fatal error", "out of memory", "sigkill", "sigsegv")):
-        level = LogSeverity.FATAL
-
-    return LogEvent(
-        line_number=line_no,
-        byte_offset=offset,
-        timestamp_raw=ts_raw,
-        timestamp_epoch=epoch,
-        level=level,
-        component=comp,
-        raw_message=line_str,
-        clean_message=clean_msg.strip(),
-        metadata={"format": "plain"}
-    )
-
-
-class StreamLogParser:
-    """
-    Constant-memory streaming log iterator.
-    Processes arbitrarily large files (gigabytes to terabytes)
-    in O(1) memory by streaming lines through an assembler buffer.
-    """
-
-    def __init__(self, file_path: str, buffer_size: int = 4 * 1024 * 1024):
-        self.file_path = file_path
-        self.buffer_size = buffer_size
-        self.total_bytes = os.path.getsize(file_path) if os.path.exists(file_path) else 0
-
-    def iterate_events(self) -> Iterator[LogEvent]:
-        """Stream parsed events from the log file, stitching multi-line stack traces."""
-        if not os.path.exists(self.file_path):
-            raise FileNotFoundError(f"Log file not found: {self.file_path}")
-
-        current_event: Optional[LogEvent] = None
-        stack_accumulator: List[str] = []
-
-        with io.open(self.file_path, "r", encoding="utf-8", errors="replace", buffering=self.buffer_size) as f:
-            line_no = 0
-            byte_offset = 0
-
-            for raw_line in f:
-                line_no += 1
-                line_bytes = len(raw_line.encode("utf-8", errors="replace"))
-                line = raw_line.rstrip("\r\n")
-
-                if not line:
-                    byte_offset += line_bytes
+                value, end = decoder.raw_decode(tail, leading)
+            except json.JSONDecodeError:
+                value = None
+                end = 0
+            if isinstance(value, dict):
+                consumed = max(1, tail[:end].count("\n") + 1)
+                event = _from_json(json.dumps(value, ensure_ascii=False), source, start_line + index)
+                if event is not None:
+                    event.physical_lines = consumed
+                    yield event, "", index
+                    index += consumed
                     continue
+        event = _parse_header(line, source, start_line + index)
+        if event is None and EXCEPTION_START.match(line.strip()):
+            event = LogEvent(source, start_line + index, None, "ERROR", line.strip())
+        yield event, line, index
+        index += 1
 
-                # Check if this line is part of a multi-line stack trace
-                if is_stack_trace_line(line, in_stack=bool(stack_accumulator)) and current_event is not None:
-                    stack_accumulator.append(line)
-                    byte_offset += line_bytes
-                    if len(stack_accumulator) > 120:
-                        current_event.stack_trace = "\n".join(stack_accumulator)
-                        yield current_event
-                        current_event = None
-                        stack_accumulator = []
+
+def _is_reference_error(event: LogEvent) -> bool:
+    if event.severity in {"WARN", "WARNING", "ERROR", "FATAL", "CRITICAL"}:
+        return True
+    text = event.message + "\n" + "\n".join(event.stack)
+    return bool(re.search(r"\b(error|exception|failed|failure|timeout|panic|fatal|crash|oom|deadlock|refused|segfault|out of memory)\b", text, re.I))
+
+
+def iter_csv_events(path: Path) -> Iterator[LogEvent]:
+    """Read row-oriented CSV datasets without loading the full dataset in memory."""
+    with path.open("r", encoding="utf-8-sig", errors="replace", newline="") as stream:
+        reader = csv.DictReader(stream)
+        if not reader.fieldnames:
+            return
+        fields = {name.strip().lower() for name in reader.fieldnames if name}
+        if not fields.intersection({"raw_log", "message", "log", "msg"}):
+            raise ValueError(f"CSV needs one of these log columns: raw_log, message, log, msg ({path})")
+        current: Optional[LogEvent] = None
+        for row_number, row in enumerate(reader, start=1):
+            if row is None:
+                continue
+            raw = str(row.get("raw_log") or row.get("message") or row.get("log") or row.get("msg") or "").strip("\r\n")
+            if not raw:
+                continue
+            try:
+                start_line = int(row.get("start_line") or row_number)
+            except (TypeError, ValueError):
+                start_line = row_number
+            label = str(row.get("cluster") or "").strip()
+            first_flag = str(row.get("first_of_cluster") or "").strip().lower() in {"1", "true", "yes"}
+            completed = []
+            row_events = []
+            for event, text, _offset in _csv_payload_items(raw, str(path), start_line):
+                if event is not None:
+                    if current is not None:
+                        completed.append(current)
+                    current = event
+                    row_events.append(event)
+                elif text.strip():
+                    if current is None:
+                        current = LogEvent(str(path), start_line, None, "UNKNOWN", text)
+                        row_events.append(current)
+                    else:
+                        current.stack.append(text)
+                        current.physical_lines += 1
+            if label:
+                candidates = [event for event in row_events if _is_reference_error(event)]
+                if not candidates and current is not None and _is_reference_error(current):
+                    candidates = [current]
+                if candidates:
+                    candidates[0].ground_truth_cluster = label
+                    candidates[0].ground_truth_first = first_flag
+            for event in completed:
+                yield event
+        if current is not None:
+            yield current
+
+
+def iter_events(paths: Sequence[Path]) -> Iterator[LogEvent]:
+    """Yield one complete event at a time; continuation lines stay with their event."""
+    for path in paths:
+        if path.suffix.lower() == ".csv":
+            yield from iter_csv_events(path)
+            continue
+        current: Optional[LogEvent] = None
+        with path.open("r", encoding="utf-8", errors="replace", newline="") as stream:
+            for number, raw in enumerate(stream, start=1):
+                text = raw.rstrip("\r\n")
+                if not text:
                     continue
-
-                # Flush pending event if any
-                if current_event is not None:
-                    if stack_accumulator:
-                        current_event.stack_trace = "\n".join(stack_accumulator)
-                        if current_event.level == LogSeverity.UNKNOWN:
-                            current_event.level = LogSeverity.ERROR
-                        stack_accumulator = []
-                    yield current_event
-                    current_event = None
-
-                # Parse the new line
-                stripped = line.strip()
-                event = parse_json_log_line(stripped, line_no, byte_offset)
-                if event is None:
-                    event = parse_plaintext_log_line(line, line_no, byte_offset)
-
-                if is_stack_trace_line(line):
-                    event.level = LogSeverity.ERROR
-                    stack_accumulator.append(line)
-
-                current_event = event
-                byte_offset += line_bytes
-
-            # Flush final pending event at EOF
-            if current_event is not None:
-                if stack_accumulator:
-                    current_event.stack_trace = "\n".join(stack_accumulator)
-                    if current_event.level == LogSeverity.UNKNOWN:
-                        current_event.level = LogSeverity.ERROR
-                yield current_event
+                event = _parse_header(text, str(path), number)
+                if event is None and "\n" not in text and EXCEPTION_START.match(text.strip()):
+                    event = LogEvent(str(path), number, None, "ERROR", text.strip())
+                if event is not None:
+                    if current is not None:
+                        yield current
+                    current = event
+                elif current is not None:
+                    current.stack.append(text)
+                    current.physical_lines += 1
+                else:
+                    current = LogEvent(str(path), number, None, "UNKNOWN", text)
+        if current is not None:
+            yield current

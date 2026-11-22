@@ -1,39 +1,25 @@
-# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
-
-# Distribution / packaging
-dist/
-build/
-*.egg-info/
-.eggs/
-
-# Virtual environments
-venv/
 .venv/
+venv/
 env/
-
-# Pytest / cache
+build/
+dist/
+*.egg-info/
 .pytest_cache/
 .coverage
 htmlcov/
+.env
+.env.*
+.gitignore.txt
 
-# Incident / generated log files (keep sample fixtures)
-*.log
-!sample_test.log
-!sample_production.log
-demo_incident_report.html
-incident_report.html
+# Large duplicate benchmark inputs and local teammate handoff archive
+/benchmark_100k.log.txt
+/test.log.txt
+/Teammate_2_Clustering.zip
 
-# IDE / OS files
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
-
-*.log
-.venv/
-__pycache__/
-.pytest_cache/
+# Local/generated report artifacts
+/log_detective_report.html
+/demo_incident_report.html
+/incident_report.html
