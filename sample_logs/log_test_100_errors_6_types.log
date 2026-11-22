@@ -1,0 +1,110 @@
+2026-11-22T14:00:04Z ERROR [orders] Database deadlock detected for transaction 4100
+2026-11-22T14:00:08Z ERROR [gateway] DNS lookup failed for upstream api-node-1.internal
+2026-11-22T14:00:12Z ERROR [auth] OAuth token expired for account 8900
+{"timestamp":"2026-11-22T14:00:16Z","level":"ERROR","service":"queue","message":"Queue lag exceeded warning threshold with 501 pending messages"}
+2026-11-22T14:00:20Z ERROR [edge] TLS handshake failed with peer 10.1.2.10
+2026-11-22T14:00:24Z FATAL [worker] Disk write failed: no space left on device for volume /var/data/volume-1
+ts=2026-11-22T14:00:28Z level=ERROR svc=orders msg="Database deadlock detected for transaction 4101"
+{"timestamp":"2026-11-22T14:00:32Z","level":"ERROR","service":"gateway","message":"DNS lookup failed for upstream api-node-2.internal"}
+2026-11-22T14:00:36Z ERROR [auth] OAuth token expired for account 8901
+2026-11-22T14:00:40Z ERROR [queue] Queue lag exceeded warning threshold with 502 pending messages
+Nov 22 14:00:44 host-a edge: ERROR: TLS handshake failed with peer 10.1.2.11
+{"timestamp":"2026-11-22T14:00:48Z","level":"FATAL","service":"worker","message":"Disk write failed: no space left on device for volume /var/data/volume-2"}
+2026-11-22T14:00:52Z ERROR [orders] Database deadlock detected for transaction 4102
+ts=2026-11-22T14:00:56Z level=ERROR svc=gateway msg="DNS lookup failed for upstream api-node-3.internal"
+2026-11-22T14:01:00Z ERROR [auth] OAuth token expired for account 8902
+{"timestamp":"2026-11-22T14:01:04Z","level":"ERROR","service":"queue","message":"Queue lag exceeded warning threshold with 503 pending messages"}
+2026-11-22T14:01:08Z ERROR [edge] TLS handshake failed with peer 10.1.2.12
+    at app.worker.flush(event.py:142)
+    at runtime.scheduler.run(worker.py:61)
+2026-11-22T14:01:12Z FATAL [worker] Disk write failed: no space left on device for volume /var/data/volume-3
+2026-11-22T14:01:16Z ERROR [orders] Database deadlock detected for transaction 4103
+{"timestamp":"2026-11-22T14:01:20Z","level":"ERROR","service":"gateway","message":"DNS lookup failed for upstream api-node-4.internal"}
+ts=2026-11-22T14:01:24Z level=ERROR svc=auth msg="OAuth token expired for account 8903"
+Nov 22 14:01:28 host-a queue: ERROR: Queue lag exceeded warning threshold with 504 pending messages
+2026-11-22T14:01:32Z ERROR [edge] TLS handshake failed with peer 10.1.2.13
+{"timestamp":"2026-11-22T14:01:36Z","level":"FATAL","service":"worker","message":"Disk write failed: no space left on device for volume /var/data/volume-4"}
+2026-11-22T14:01:40Z ERROR [orders] Database deadlock detected for transaction 4104
+2026-11-22T14:01:44Z ERROR [gateway] DNS lookup failed for upstream api-node-1.internal
+2026-11-22T14:01:48Z ERROR [auth] OAuth token expired for account 8904
+ts=2026-11-22T14:01:52Z level=ERROR svc=queue msg="Queue lag exceeded warning threshold with 505 pending messages"
+2026-11-22T14:01:56Z ERROR [edge] TLS handshake failed with peer 10.1.2.14
+2026-11-22T14:02:00Z FATAL [worker] Disk write failed: no space left on device for volume /var/data/volume-5
+2026-11-22T14:02:04Z ERROR [orders] Database deadlock detected for transaction 4105
+{"timestamp":"2026-11-22T14:02:08Z","level":"ERROR","service":"gateway","message":"DNS lookup failed for upstream api-node-2.internal"}
+Nov 22 14:02:12 host-a auth: ERROR: OAuth token expired for account 8905
+2026-11-22T14:02:16Z ERROR [queue] Queue lag exceeded warning threshold with 506 pending messages
+    at app.worker.flush(event.py:142)
+    at runtime.scheduler.run(worker.py:61)
+ts=2026-11-22T14:02:20Z level=ERROR svc=edge msg="TLS handshake failed with peer 10.1.2.15"
+{"timestamp":"2026-11-22T14:02:24Z","level":"FATAL","service":"worker","message":"Disk write failed: no space left on device for volume /var/data/volume-6"}
+2026-11-22T14:02:28Z ERROR [orders] Database deadlock detected for transaction 4106
+2026-11-22T14:02:32Z ERROR [gateway] DNS lookup failed for upstream api-node-3.internal
+2026-11-22T14:02:36Z ERROR [auth] OAuth token expired for account 8906
+{"timestamp":"2026-11-22T14:02:40Z","level":"ERROR","service":"queue","message":"Queue lag exceeded warning threshold with 507 pending messages"}
+2026-11-22T14:02:44Z ERROR [edge] TLS handshake failed with peer 10.1.2.16
+ts=2026-11-22T14:02:48Z level=ERROR svc=orders msg="Database deadlock detected for transaction 4107"
+2026-11-22T14:02:52Z ERROR [gateway] DNS lookup failed for upstream api-node-4.internal
+Nov 22 14:02:56 host-a auth: ERROR: OAuth token expired for account 8907
+2026-11-22T14:03:00Z ERROR [queue] Queue lag exceeded warning threshold with 508 pending messages
+2026-11-22T14:03:04Z ERROR [edge] TLS handshake failed with peer 10.1.2.17
+2026-11-22T14:03:08Z ERROR [orders] Database deadlock detected for transaction 4108
+{"timestamp":"2026-11-22T14:03:12Z","level":"ERROR","service":"gateway","message":"DNS lookup failed for upstream api-node-1.internal"}
+ts=2026-11-22T14:03:16Z level=ERROR svc=auth msg="OAuth token expired for account 8908"
+2026-11-22T14:03:20Z ERROR [queue] Queue lag exceeded warning threshold with 509 pending messages
+2026-11-22T14:03:24Z ERROR [edge] TLS handshake failed with peer 10.1.2.18
+    at app.worker.flush(event.py:142)
+    at runtime.scheduler.run(worker.py:61)
+{"timestamp":"2026-11-22T14:03:28Z","level":"ERROR","service":"orders","message":"Database deadlock detected for transaction 4109"}
+2026-11-22T14:03:32Z ERROR [gateway] DNS lookup failed for upstream api-node-2.internal
+2026-11-22T14:03:36Z ERROR [auth] OAuth token expired for account 8909
+Nov 22 14:03:40 host-a queue: ERROR: Queue lag exceeded warning threshold with 510 pending messages
+ts=2026-11-22T14:03:44Z level=ERROR svc=edge msg="TLS handshake failed with peer 10.1.2.19"
+2026-11-22T14:03:48Z ERROR [orders] Database deadlock detected for transaction 4110
+2026-11-22T14:03:52Z ERROR [gateway] DNS lookup failed for upstream api-node-3.internal
+2026-11-22T14:03:56Z ERROR [auth] OAuth token expired for account 8910
+{"timestamp":"2026-11-22T14:04:00Z","level":"ERROR","service":"queue","message":"Queue lag exceeded warning threshold with 511 pending messages"}
+2026-11-22T14:04:04Z ERROR [orders] Database deadlock detected for transaction 4111
+2026-11-22T14:04:08Z ERROR [gateway] DNS lookup failed for upstream api-node-4.internal
+ts=2026-11-22T14:04:12Z level=ERROR svc=auth msg="OAuth token expired for account 8911"
+{"timestamp":"2026-11-22T14:04:16Z","level":"ERROR","service":"queue","message":"Queue lag exceeded warning threshold with 512 pending messages"}
+2026-11-22T14:04:20Z ERROR [orders] Database deadlock detected for transaction 4112
+Nov 22 14:04:24 host-a gateway: ERROR: DNS lookup failed for upstream api-node-1.internal
+2026-11-22T14:04:28Z ERROR [auth] OAuth token expired for account 8912
+{"timestamp":"2026-11-22T14:04:32Z","level":"ERROR","service":"queue","message":"Queue lag exceeded warning threshold with 513 pending messages"}
+    at app.worker.flush(event.py:142)
+    at runtime.scheduler.run(worker.py:61)
+2026-11-22T14:04:36Z ERROR [orders] Database deadlock detected for transaction 4113
+ts=2026-11-22T14:04:40Z level=ERROR svc=gateway msg="DNS lookup failed for upstream api-node-2.internal"
+2026-11-22T14:04:44Z ERROR [auth] OAuth token expired for account 8913
+{"timestamp":"2026-11-22T14:04:48Z","level":"ERROR","service":"queue","message":"Queue lag exceeded warning threshold with 514 pending messages"}
+2026-11-22T14:04:52Z ERROR [orders] Database deadlock detected for transaction 4114
+2026-11-22T14:04:56Z ERROR [gateway] DNS lookup failed for upstream api-node-3.internal
+2026-11-22T14:05:00Z ERROR [auth] OAuth token expired for account 8914
+{"timestamp":"2026-11-22T14:05:04Z","level":"ERROR","service":"orders","message":"Database deadlock detected for transaction 4115"}
+Nov 22 14:05:08 host-a gateway: ERROR: DNS lookup failed for upstream api-node-4.internal
+2026-11-22T14:05:12Z ERROR [auth] OAuth token expired for account 8915
+2026-11-22T14:05:16Z ERROR [orders] Database deadlock detected for transaction 4116
+{"timestamp":"2026-11-22T14:05:20Z","level":"ERROR","service":"gateway","message":"DNS lookup failed for upstream api-node-1.internal"}
+2026-11-22T14:05:24Z ERROR [auth] OAuth token expired for account 8916
+2026-11-22T14:05:28Z ERROR [orders] Database deadlock detected for transaction 4117
+2026-11-22T14:05:32Z ERROR [gateway] DNS lookup failed for upstream api-node-2.internal
+ts=2026-11-22T14:05:36Z level=ERROR svc=auth msg="OAuth token expired for account 8917"
+2026-11-22T14:05:40Z ERROR [orders] Database deadlock detected for transaction 4118
+    at app.worker.flush(event.py:142)
+    at runtime.scheduler.run(worker.py:61)
+2026-11-22T14:05:44Z ERROR [gateway] DNS lookup failed for upstream api-node-3.internal
+2026-11-22T14:05:48Z ERROR [orders] Database deadlock detected for transaction 4119
+Nov 22 14:05:52 host-a gateway: ERROR: DNS lookup failed for upstream api-node-4.internal
+2026-11-22T14:05:56Z ERROR [orders] Database deadlock detected for transaction 4120
+2026-11-22T14:06:00Z ERROR [gateway] DNS lookup failed for upstream api-node-1.internal
+ts=2026-11-22T14:06:04Z level=ERROR svc=orders msg="Database deadlock detected for transaction 4121"
+{"timestamp":"2026-11-22T14:06:08Z","level":"ERROR","service":"gateway","message":"DNS lookup failed for upstream api-node-2.internal"}
+2026-11-22T14:06:12Z ERROR [orders] Database deadlock detected for transaction 4122
+2026-11-22T14:06:16Z ERROR [orders] Database deadlock detected for transaction 4123
+2026-11-22T14:06:20Z ERROR [orders] Database deadlock detected for transaction 4124
+{"timestamp":"2026-11-22T14:06:24Z","level":"ERROR","service":"orders","message":"Database deadlock detected for transaction 4125"}
+2026-11-22T14:06:28Z ERROR [orders] Database deadlock detected for transaction 4126
+ts=2026-11-22T14:06:32Z level=ERROR svc=orders msg="Database deadlock detected for transaction 4127"
+Nov 22 14:06:36 host-a orders: ERROR: Database deadlock detected for transaction 4128
+{"timestamp":"2026-11-22T14:06:40Z","level":"ERROR","service":"orders","message":"Database deadlock detected for transaction 4129"}
