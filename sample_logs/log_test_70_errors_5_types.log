@@ -1,0 +1,82 @@
+2026-05-09T14:00:03Z ERROR [cache] Redis connection reset by peer for session 5000
+2026-05-09T14:00:06Z ERROR [payments] Payment provider returned HTTP 503 for order 8000
+2026-05-09T14:00:09Z ERROR [auth] JWT token validation failed for user 1000: token expired
+2026-05-09T14:00:12Z FATAL [worker] Worker process crashed: OutOfMemoryError after heap usage 2048MB
+{"timestamp":"2026-05-09T14:00:15Z","level":"ERROR","service":"orders","message":"Database connection timed out after 100ms on db-node-1"}
+2026-05-09T14:00:18Z ERROR [cache] Redis connection reset by peer for session 5001
+2026-05-09T14:00:21Z ERROR [payments] Payment provider returned HTTP 503 for order 8001
+2026-05-09T14:00:24Z ERROR [auth] JWT token validation failed for user 1001: token expired
+2026-05-09T14:00:27Z FATAL [worker] Worker process crashed: OutOfMemoryError after heap usage 2176MB
+{"timestamp":"2026-05-09T14:00:30Z","level":"ERROR","service":"orders","message":"Database connection timed out after 101ms on db-node-2"}
+2026-05-09T14:00:33Z ERROR [cache] Redis connection reset by peer for session 5002
+    at app.pipeline.process(event.py:217)
+    at worker.main(worker.py:84)
+2026-05-09T14:00:36Z ERROR [payments] Payment provider returned HTTP 503 for order 8002
+2026-05-09T14:00:39Z ERROR [auth] JWT token validation failed for user 1002: token expired
+2026-05-09T14:00:42Z FATAL [worker] Worker process crashed: OutOfMemoryError after heap usage 2304MB
+{"timestamp":"2026-05-09T14:00:45Z","level":"ERROR","service":"orders","message":"Database connection timed out after 102ms on db-node-3"}
+2026-05-09T14:00:48Z ERROR [cache] Redis connection reset by peer for session 5003
+2026-05-09T14:00:51Z ERROR [payments] Payment provider returned HTTP 503 for order 8003
+2026-05-09T14:00:54Z ERROR [auth] JWT token validation failed for user 1003: token expired
+2026-05-09T14:00:57Z FATAL [worker] Worker process crashed: OutOfMemoryError after heap usage 2432MB
+{"timestamp":"2026-05-09T14:01:00Z","level":"ERROR","service":"orders","message":"Database connection timed out after 103ms on db-node-4"}
+2026-05-09T14:01:03Z ERROR [cache] Redis connection reset by peer for session 5004
+2026-05-09T14:01:06Z ERROR [payments] Payment provider returned HTTP 503 for order 8004
+    at app.pipeline.process(event.py:217)
+    at worker.main(worker.py:84)
+2026-05-09T14:01:09Z ERROR [auth] JWT token validation failed for user 1004: token expired
+2026-05-09T14:01:12Z FATAL [worker] Worker process crashed: OutOfMemoryError after heap usage 2560MB
+{"timestamp":"2026-05-09T14:01:15Z","level":"ERROR","service":"orders","message":"Database connection timed out after 104ms on db-node-1"}
+2026-05-09T14:01:18Z ERROR [cache] Redis connection reset by peer for session 5005
+2026-05-09T14:01:21Z ERROR [payments] Payment provider returned HTTP 503 for order 8005
+2026-05-09T14:01:24Z ERROR [auth] JWT token validation failed for user 1005: token expired
+2026-05-09T14:01:27Z FATAL [worker] Worker process crashed: OutOfMemoryError after heap usage 2688MB
+{"timestamp":"2026-05-09T14:01:30Z","level":"ERROR","service":"orders","message":"Database connection timed out after 105ms on db-node-2"}
+2026-05-09T14:01:33Z ERROR [cache] Redis connection reset by peer for session 5006
+2026-05-09T14:01:36Z ERROR [payments] Payment provider returned HTTP 503 for order 8006
+2026-05-09T14:01:39Z ERROR [auth] JWT token validation failed for user 1006: token expired
+    at app.pipeline.process(event.py:217)
+    at worker.main(worker.py:84)
+2026-05-09T14:01:42Z FATAL [worker] Worker process crashed: OutOfMemoryError after heap usage 2816MB
+{"timestamp":"2026-05-09T14:01:45Z","level":"ERROR","service":"orders","message":"Database connection timed out after 106ms on db-node-3"}
+2026-05-09T14:01:48Z ERROR [cache] Redis connection reset by peer for session 5007
+2026-05-09T14:01:51Z ERROR [payments] Payment provider returned HTTP 503 for order 8007
+2026-05-09T14:01:54Z ERROR [auth] JWT token validation failed for user 1007: token expired
+2026-05-09T14:01:57Z ERROR [orders] Database connection timed out after 107ms on db-node-4
+{"timestamp":"2026-05-09T14:02:00Z","level":"ERROR","service":"cache","message":"Redis connection reset by peer for session 5008"}
+2026-05-09T14:02:03Z ERROR [payments] Payment provider returned HTTP 503 for order 8008
+2026-05-09T14:02:06Z ERROR [auth] JWT token validation failed for user 1008: token expired
+2026-05-09T14:02:09Z ERROR [orders] Database connection timed out after 108ms on db-node-1
+2026-05-09T14:02:12Z ERROR [cache] Redis connection reset by peer for session 5009
+    at app.pipeline.process(event.py:217)
+    at worker.main(worker.py:84)
+{"timestamp":"2026-05-09T14:02:15Z","level":"ERROR","service":"payments","message":"Payment provider returned HTTP 503 for order 8009"}
+2026-05-09T14:02:18Z ERROR [auth] JWT token validation failed for user 1009: token expired
+2026-05-09T14:02:21Z ERROR [orders] Database connection timed out after 109ms on db-node-2
+2026-05-09T14:02:24Z ERROR [payments] Payment provider returned HTTP 503 for order 8010
+2026-05-09T14:02:27Z ERROR [auth] JWT token validation failed for user 1010: token expired
+{"timestamp":"2026-05-09T14:02:30Z","level":"ERROR","service":"orders","message":"Database connection timed out after 110ms on db-node-3"}
+2026-05-09T14:02:33Z ERROR [payments] Payment provider returned HTTP 503 for order 8011
+2026-05-09T14:02:36Z ERROR [auth] JWT token validation failed for user 1011: token expired
+2026-05-09T14:02:39Z ERROR [orders] Database connection timed out after 111ms on db-node-4
+2026-05-09T14:02:42Z ERROR [payments] Payment provider returned HTTP 503 for order 8012
+{"timestamp":"2026-05-09T14:02:45Z","level":"ERROR","service":"auth","message":"JWT token validation failed for user 1012: token expired"}
+    at app.pipeline.process(event.py:217)
+    at worker.main(worker.py:84)
+2026-05-09T14:02:48Z ERROR [orders] Database connection timed out after 112ms on db-node-1
+2026-05-09T14:02:51Z ERROR [auth] JWT token validation failed for user 1013: token expired
+2026-05-09T14:02:54Z ERROR [orders] Database connection timed out after 113ms on db-node-2
+2026-05-09T14:02:57Z ERROR [auth] JWT token validation failed for user 1014: token expired
+{"timestamp":"2026-05-09T14:03:00Z","level":"ERROR","service":"orders","message":"Database connection timed out after 114ms on db-node-3"}
+2026-05-09T14:03:03Z ERROR [auth] JWT token validation failed for user 1015: token expired
+2026-05-09T14:03:06Z ERROR [orders] Database connection timed out after 115ms on db-node-4
+2026-05-09T14:03:09Z ERROR [auth] JWT token validation failed for user 1016: token expired
+2026-05-09T14:03:12Z ERROR [orders] Database connection timed out after 116ms on db-node-1
+{"timestamp":"2026-05-09T14:03:15Z","level":"ERROR","service":"auth","message":"JWT token validation failed for user 1017: token expired"}
+2026-05-09T14:03:18Z ERROR [orders] Database connection timed out after 117ms on db-node-2
+    at app.pipeline.process(event.py:217)
+    at worker.main(worker.py:84)
+2026-05-09T14:03:21Z ERROR [orders] Database connection timed out after 118ms on db-node-3
+2026-05-09T14:03:24Z ERROR [orders] Database connection timed out after 119ms on db-node-4
+2026-05-09T14:03:27Z ERROR [orders] Database connection timed out after 120ms on db-node-1
+{"timestamp":"2026-05-09T14:03:30Z","level":"ERROR","service":"orders","message":"Database connection timed out after 121ms on db-node-2"}
